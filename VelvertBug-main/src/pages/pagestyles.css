@@ -1,0 +1,37 @@
+#para1{
+   margin: auto;
+   padding: 20px;
+    width: 65%;
+    font-size: 21px;
+    /* border: 2px solid red; */
+    /* border-radius: 25%; */
+    text-align: center;
+}
+
+
+
+.dancing-script-categories-name {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 40px;
+  font-style: normal;
+}
+
+.options{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 5px;
+
+  margin-left: 10rem;
+  list-style-type: none;
+  padding: 25px;
+}
+
+.option-list{
+  padding: 20px;
+  border: 2px solid red;
+  border-radius: 50px;
+  background-color: rgba(234, 101, 101, 0.341);
+  margin: 10px;
+}

@@ -1,0 +1,17 @@
+.f-info{
+    width:100%;
+    position:relative;
+    bottom: 0;
+    /* background-color: whitesmoke; */
+}
+.f-socials{
+    display: flex;
+    justify-content:space-around ;
+}
+.f-contact{
+    display: flex;
+    justify-content:space-evenly ;
+}
+.fa-instagram{
+    color: #c13584;
+}

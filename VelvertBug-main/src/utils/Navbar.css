@@ -1,0 +1,17 @@
+#navbaroptions{
+    margin-left:40em !important;
+    align-items: end !important;
+}
+/* .dropdown-menu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+} */
+
+.dropdown-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+
