@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Rnd } from 'react-rnd';
 import html2canvas from 'html2canvas';
-import './App.css';
+// import './App.css';
+import './CardEdit.css';
 
-const App = () => {
+const CardEdit = () => {
   const [text, setText] = useState('');
   const [fontSize, setFontSize] = useState(24);
   const [textSize, setTextSize] = useState({ width: 200, height: 50 });
@@ -73,4 +74,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CardEdit;

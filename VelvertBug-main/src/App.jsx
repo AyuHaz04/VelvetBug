@@ -13,6 +13,7 @@ import Lovestory from "./pages/Lovestory"
 import Roka from "./pages/Roka"
 import SaveTheDate from "./pages/SaveTheDate"
 import Wedding from "./pages/Wedding"
+import CardEdit from "./pages/CardEdit"
 
 function App() {
   
@@ -21,7 +22,6 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        
         <Route path="/Anniversary" element={<Anniversary/>}></Route>
         <Route path="/BabyName" element={<BabyName/>}></Route>
         <Route path="/BabyShower" element={<BabyShower/>}></Route>
@@ -34,7 +34,7 @@ function App() {
         <Route path="/SaveTheDate" element={<SaveTheDate/>}></Route>
         <Route path="/Wedding" element={<Wedding/>}></Route>
       </Routes>
-
+      <CardEdit/>
       <Footer/>
       
     </>
