@@ -33,8 +33,9 @@ function App() {
         <Route path="/Roka" element={<Roka/>}></Route>
         <Route path="/SaveTheDate" element={<SaveTheDate/>}></Route>
         <Route path="/Wedding" element={<Wedding/>}></Route>
+        <Route path="/CardEdit" element={<CardEdit/>}></Route>
+        
       </Routes>
-      <CardEdit/>
       <Footer/>
       
     </>

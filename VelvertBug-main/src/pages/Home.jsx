@@ -3,6 +3,7 @@ import Footer from "../utils/Footer";
 import React, { useContext } from 'react'
 import { StoreContext } from '../assets/Components/Context/StoreContext'
 import "./pagestyles.css";
+import { Link } from "react-router-dom";
 
 
 export default function Home() {
@@ -28,17 +29,17 @@ export default function Home() {
 
     <div className="dancing-script-categories-name">
       <ul className="options">
-        <li className="option-list">Wedding </li>
-        <li className="option-list">Anniversary</li>
-        <li className="option-list">BabyName </li>
-        <li className="option-list">BabyShower</li>
-        <li className="option-list">Birthday</li>
-        <li className="option-list">Dhoti</li>
-        <li className="option-list">HalfSaree </li>
-        <li className="option-list">Housewarming </li>
-        <li className="option-list">Lovestory</li>
-        <li className="option-list">Roka </li>
-        <li className="option-list">SaveTheDate</li>
+        <Link to="/Wedding"><li className="option-list">Wedding </li></Link>
+        <Link to="/Anniversary"><li className="option-list">Anniversary</li></Link>
+        <Link to="/BabyName"><li className="option-list">BabyName </li></Link>
+        <Link to="/BabyShower"><li className="option-list">BabyShower</li></Link>
+        <Link to="/Birthday"><li className="option-list">Birthday</li></Link>
+        <Link to="/Dhoti"><li className="option-list">Dhoti</li></Link>
+        <Link to="/HalfSaree"><li className="option-list">HalfSaree </li></Link>
+        <Link to="/Housewarming"><li className="option-list">Housewarming </li></Link>
+        <Link to="/Lovestory"><li className="option-list">Lovestory</li></Link>
+        <Link to="/Roka"><li className="option-list">Roka </li></Link>
+        <Link to="/SaveTheDate"><li className="option-list">SaveTheDate</li></Link>
       </ul>
     </div>
       
