@@ -14,7 +14,7 @@ export default function Birthday() {
     }
   return (
     <>
-      <div>Hi I am Birthday</div>
+      <h2>Birthday Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

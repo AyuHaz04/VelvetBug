@@ -15,7 +15,7 @@ export default function Lovestory() {
     }
   return (
     <>
-      <div>Hi I am Lovestory</div>
+      <h2>LoveStory Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

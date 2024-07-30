@@ -14,7 +14,7 @@ export default function Roka() {
     }
   return (
     <>
-      <div>Hi I am Roka</div>
+      <h2>Roka Ceremony cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

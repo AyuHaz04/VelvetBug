@@ -13,8 +13,7 @@ export default function Housewarming() {
       
     }
   return (
-    <>
-      <div>Hi I am Housewarming</div>
+    <><h2>Housewarming Ceremony Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

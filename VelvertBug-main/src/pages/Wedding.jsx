@@ -15,7 +15,7 @@ export default function Wedding() {
     }
   return (
     <>
-      <div>Hi I am wedding</div>
+      <h2>Wedding Cards</h2>
 
       <div className="card-display-list">
         {greeting_list.map((item) => {

@@ -14,7 +14,7 @@ export default function Dhoti() {
     }
   return (
     <>
-      <div>Hi I am Dhoti</div>
+      <h2>Dhoti Ceremony Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

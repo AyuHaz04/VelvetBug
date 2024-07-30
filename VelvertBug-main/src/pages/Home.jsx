@@ -14,13 +14,6 @@ export default function Home() {
       margin: '10px',
       
     }
-    const imgStyle2 = {
-      width: '30rem' ,
-      height: '50rem',
-      borderRadius: '10px',
-      margin: '10px',
-      
-    }
   return (
     <>
     <div>
@@ -49,21 +42,7 @@ export default function Home() {
       </ul>
     </div>
       
-      <div className="card-display-list">
-        {greeting_list.map((item) => {
-            return (
-                <div>
-                   
-                    <div className="image">
-                        <img src={url+"/images/"+item.image} alt="" style={imgStyle2}/>
-                    </div>
-                    
-
-                </div>
-
-            );
-        })}
-      </div>
+    
     </>
   );
 }

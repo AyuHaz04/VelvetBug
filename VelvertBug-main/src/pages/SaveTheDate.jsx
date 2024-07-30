@@ -14,7 +14,7 @@ export default function SaveTheDate() {
     }
   return (
     <>
-      <div>Hi I am SaveTheDate</div>
+      <h2>SaveTheDate Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

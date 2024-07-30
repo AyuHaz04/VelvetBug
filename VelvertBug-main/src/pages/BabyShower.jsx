@@ -14,7 +14,7 @@ export default function BabyShower() {
     }
   return (
     <>
-      <div>Hi I am BabyShower</div>
+     <h2>BabyShower Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (

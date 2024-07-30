@@ -14,7 +14,7 @@ export default function HalfSaree() {
     }
   return (
     <>
-      <div>Hi I am HalfSaree</div>
+      <h2>HalfSaree Ceremony Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => {
           return (
