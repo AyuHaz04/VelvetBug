@@ -1,11 +1,17 @@
-import Navbar from "../utils/Navbar";
-import Footer from "../utils/Footer";
+import "./pagestyles.css";
 import React, { useContext } from 'react'
 import { StoreContext } from '../assets/Components/Context/StoreContext'
 import { Link } from "react-router-dom";
 
 export default function BabyName() {
     const {greeting_list,url} = useContext(StoreContext);
+    const imgStyle2 = {
+      width: '30rem' ,
+      height: '50rem',
+      borderRadius: '10px',
+      margin: '10px',
+      
+    }
   return (
     <>
       <div>Hi I am BabyName</div>
@@ -14,10 +20,10 @@ export default function BabyName() {
         {greeting_list.map((item) => {
           return (
             <div>
-              <div className="item">{item._id}</div>
+              
               <div className="image">
                 <Link to="/CardEdit">
-                  <img src={url + "/images/" + item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
               <div className="name">{item.name}</div>

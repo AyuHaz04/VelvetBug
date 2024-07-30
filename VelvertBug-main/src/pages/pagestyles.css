@@ -35,3 +35,27 @@
   background-color: rgba(234, 101, 101, 0.341);
   margin: 10px;
 }
+
+.card-display-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  box-shadow: 5px;
+}
+
+.image{
+  margin: 10vh;
+}
+
+.image:hover{
+  opacity: 0.8;
+}
+
+.li{
+  text-decoration: none;
+}
+
+h2{
+  text-align: center;
+}

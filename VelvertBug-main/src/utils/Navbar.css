@@ -1,17 +1,13 @@
-#navbaroptions{
-    margin-left:40em !important;
-    align-items: end !important;
-}
-/* .dropdown-menu{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-} */
-
-.dropdown-item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: small;
+.Header{
+    background-color:rgb(237, 120, 120);
+    height: 70px;
 }
 
+.great-vibes-regular ,h1{
+    font-family: "Great Vibes", cursive;
+    font-weight: 600;
+    font-size: 50px;
+    font-style: normal;
+    text-align: center;
+    color: red;
+  }

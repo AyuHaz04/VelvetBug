@@ -1,5 +1,4 @@
-import Navbar from "../utils/Navbar";
-import Footer from "../utils/Footer";
+
 import React, { useContext } from 'react'
 import { StoreContext } from '../assets/Components/Context/StoreContext'
 import "./pagestyles.css";
@@ -11,6 +10,13 @@ export default function Home() {
     const imgStyle = {
       width: '100%' ,
       height: '600px',
+      borderRadius: '10px',
+      margin: '10px',
+      
+    }
+    const imgStyle2 = {
+      width: '30rem' ,
+      height: '50rem',
       borderRadius: '10px',
       margin: '10px',
       
@@ -47,13 +53,11 @@ export default function Home() {
         {greeting_list.map((item) => {
             return (
                 <div>
-                    <div className="item">{item._id}</div>
+                   
                     <div className="image">
-                        <img src={url+"/images/"+item.image} alt="" />
+                        <img src={url+"/images/"+item.image} alt="" style={imgStyle2}/>
                     </div>
-                    <div className="name">{item.name}</div>
-                    <div className="description">{item.font}</div>
-                    <div className="price">{item.price}</div>
+                    
 
                 </div>
 
