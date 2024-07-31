@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 export default function Home() {
     const {greeting_list,url} = useContext(StoreContext);
     const imgStyle = {
-      width: '100%' ,
+      width: '95%' ,
       height: '600px',
       borderRadius: '10px',
-      margin: '10px',
+      margin: '5vh',
       
     }
   return (
@@ -23,6 +23,9 @@ export default function Home() {
     <div className="para" id="para1">
       <p>
       Discover the future of invitations with our stunning digital cards! Elevate your events with eco-friendly, customizable designs featuring animations and interactive elements. Instantly shareable across all platforms, our digital invites are perfect for making a memorable impression. Explore our diverse collection and create a unique, unforgettable experience for your guests today!
+      </p>
+      <p>
+      Here are the Different occassions for you to choose your cards for
       </p>
     </div>
 
