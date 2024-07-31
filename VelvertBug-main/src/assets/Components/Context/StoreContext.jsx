@@ -6,10 +6,15 @@ const StoreContextProvider = (props) => {
 
     const url = "http://localhost:4000"
     const [greeting_list, setGreetingList] = useState([]);
+    const [img, setImg] = useState("");
 
     const fetchGreetingList = async () => {
         const response = await axios.get(url + "/api/greeting/list");
         setGreetingList(response.data.data);
+    }
+
+    const setImage = (image) => {
+        setImg(image);
     }
 
     useEffect(() => {
@@ -24,6 +29,8 @@ const StoreContextProvider = (props) => {
     const contextValue = {
         url,
         greeting_list,
+        setImage,
+        img,
     };
 
     return (

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Lovestory() {
 
-    const {greeting_list,url} = useContext(StoreContext);
+  const {greeting_list,url,setImage} = useContext(StoreContext);
     const imgStyle2 = {
       width: '30rem' ,
       height: '50rem',
@@ -17,13 +17,13 @@ export default function Lovestory() {
     <>
       <h2>LoveStory Cards</h2>
       <div className="card-display-list">
-        {greeting_list.map((item) => {
+        {greeting_list.map((item) => { if(item.category == "Lovestory"){
           return (
             <div>
-              <div className="item">{item._id}</div>
+              
               <div className="image">
                 <Link to="/CardEdit">
-                  <img src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
+                <img onClick={setImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
               <div className="name">{item.name}</div>
@@ -31,6 +31,8 @@ export default function Lovestory() {
               <div className="price">{item.price}</div>
             </div>
           );
+        }
+          
         })}
       </div>
     </>

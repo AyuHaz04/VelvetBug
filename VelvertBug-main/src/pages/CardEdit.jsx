@@ -1,9 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState,useContext } from 'react';
 import { Rnd } from 'react-rnd';
 import html2canvas from 'html2canvas';
 import './CardEdit.css';
+import { StoreContext } from '../assets/Components/Context/StoreContext'
 
 const CardEdit = () => {
+  const {url,img} = useContext(StoreContext);
   const [texts, setTexts] = useState([
     { text: '', fontSize: 24, fontStyle: 'Chopin Script', textSize: { width: 200, height: 50 }, position: { x: 50, y: 50 } }
   ]);
@@ -72,7 +74,7 @@ const CardEdit = () => {
           <button onClick={handleDownload}>Download Image</button>
         </div>
         <div className="image-container" ref={imageRef}>
-          <img src="https://via.placeholder.com/400" alt="Placeholder" />
+          <img src={url + "/images/" + img} alt="Placeholder" />
           {texts.map((textItem, index) => (
             <Rnd
               key={index}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import './pagestyles.css';
 
 export default function Anniversary() {
-    const {greeting_list,url} = useContext(StoreContext);
+    const {greeting_list,url,setImage} = useContext(StoreContext);
     const imgStyle2 = {
       width: '30rem' ,
       height: '50rem',
@@ -18,13 +18,13 @@ export default function Anniversary() {
       <h2>Anniversary cards</h2>
 
       <div className="card-display-list">
-        {greeting_list.map((item) => {
-          return (
+        {greeting_list.map((item) => { if(item.category == "Anniversary"){
+          return ( 
             <div>
               
               <div className="image">
                 <Link to="/CardEdit">
-                  <img src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
+                  <img onClick={setImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
               <div className="name">{item.name}</div>
@@ -32,6 +32,9 @@ export default function Anniversary() {
               <div className="price">{item.price}</div>
             </div>
           );
+
+        }
+          
         })}
       </div>
     </>
