@@ -40,7 +40,7 @@
   margin: 15px;
   text-decoration: none;
   color:red;
-  font-size: 35px;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -74,3 +74,6 @@
 h2{
   text-align: center;
 }
+ h1{
+  color: rgb(233, 148, 148);
+ }

@@ -1,13 +1,13 @@
-import React, { useRef, useState,useContext } from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import { Rnd } from 'react-rnd';
 import html2canvas from 'html2canvas';
 import './CardEdit.css';
-import { StoreContext } from '../assets/Components/Context/StoreContext'
+import { StoreContext } from '../assets/Components/Context/StoreContext';
 
 const CardEdit = () => {
-  const {url,img} = useContext(StoreContext);
+  const { url, img } = useContext(StoreContext);
   const [texts, setTexts] = useState([
-    { text: '', fontSize: 24, fontStyle: 'Chopin Script', textSize: { width: 200, height: 50 }, position: { x: 50, y: 50 } }
+    { text: '', fontSize: 24, fontStyle: 'Chopin Script', color: '#000000', textSize: { width: 200, height: 50 }, position: { x: 50, y: 50 } }
   ]);
   const imageRef = useRef(null);
 
@@ -29,8 +29,14 @@ const CardEdit = () => {
     setTexts(newTexts);
   };
 
+  const handleColorChange = (index, e) => {
+    const newTexts = [...texts];
+    newTexts[index].color = e.target.value;
+    setTexts(newTexts);
+  };
+
   const handleAddTextbox = () => {
-    const newText = { text: '', fontSize: 24, fontStyle: 'Chopin Script', textSize: { width: 200, height: 50 }, position: { x: 50, y: 50 } };
+    const newText = { text: '', fontSize: 24, fontStyle: 'Chopin Script', color: '#000000', textSize: { width: 200, height: 50 }, position: { x: 50, y: 50 } };
     setTexts([...texts, newText]);
   };
 
@@ -68,6 +74,11 @@ const CardEdit = () => {
                 <option value="Great Vibes">Great Vibes</option>
                 <option value="Cinzel">Cinzel</option>
               </select>
+              <input
+                type="color"
+                value={textItem.color}
+                onChange={(e) => handleColorChange(index, e)}
+              />
             </div>
           ))}
           <button onClick={handleAddTextbox}>Add Textbox</button>
@@ -97,7 +108,10 @@ const CardEdit = () => {
                 setTexts(newTexts);
               }}
             >
-              <div className="overlay-text" style={{ fontSize: `${textItem.fontSize}px`, fontFamily: textItem.fontStyle }}>
+              <div
+                className="overlay-text"
+                style={{ fontSize: `${textItem.fontSize}px`, fontFamily: textItem.fontStyle, color: textItem.color }}
+              >
                 {textItem.text}
               </div>
             </Rnd>
