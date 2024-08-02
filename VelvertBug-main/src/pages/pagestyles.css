@@ -10,13 +10,17 @@
 
 
 
-.dancing-script-categories-name {
+/* .dancing-script- {
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-weight: 500;
   font-size: 40px;
   font-style: normal;
-}
+} */
+
+
+
+
 
 .options{
   display: grid;
@@ -29,11 +33,22 @@
 }
 
 .option-list{
-  padding: 20px;
+  padding: 10px;
   border: 2px solid red;
   border-radius: 50px;
   background-color: rgba(234, 101, 101, 0.341);
-  margin: 10px;
+  margin: 15px;
+  text-decoration: none;
+  color:red;
+  font-size: 35px;
+  text-align: center;
+}
+
+.cinzel,.option-list,p {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .card-display-list{

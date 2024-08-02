@@ -1,13 +1,17 @@
 .Header{
-    background-color:rgb(237, 120, 120);
+    background-color:rgb(233, 148, 148);
     height: 70px;
 }
 
-.great-vibes-regular ,h1{
-    font-family: "Great Vibes", cursive;
-    font-weight: 600;
-    font-size: 50px;
-    font-style: normal;
+
+
+
+  .cinzel,h1 {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 75px;
     text-align: center;
-    color: red;
+    font-style: normal;
+    color: rgb(243, 233, 233);
   }

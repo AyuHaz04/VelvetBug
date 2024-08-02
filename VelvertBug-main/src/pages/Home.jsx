@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 export default function Home() {
     const {greeting_list,url} = useContext(StoreContext);
     const imgStyle = {
-      width: '95%' ,
+      width: '97%' ,
       height: '600px',
       borderRadius: '10px',
-      margin: '5vh',
+      margin: '3vh',
       
     }
   return (
@@ -31,17 +31,17 @@ export default function Home() {
 
     <div className="dancing-script-categories-name">
       <ul className="options">
-        <Link to="/Wedding"><li className="option-list">Wedding </li></Link>
-        <Link to="/Anniversary"><li className="option-list">Anniversary</li></Link>
-        <Link to="/BabyName"><li className="option-list">BabyName </li></Link>
-        <Link to="/BabyShower"><li className="option-list">BabyShower</li></Link>
-        <Link to="/Birthday"><li className="option-list">Birthday</li></Link>
-        <Link to="/Dhoti"><li className="option-list">Dhoti</li></Link>
-        <Link to="/HalfSaree"><li className="option-list">HalfSaree </li></Link>
-        <Link to="/Housewarming"><li className="option-list">Housewarming </li></Link>
-        <Link to="/Lovestory"><li className="option-list">Lovestory</li></Link>
-        <Link to="/Roka"><li className="option-list">Roka </li></Link>
-        <Link to="/SaveTheDate"><li className="option-list">SaveTheDate</li></Link>
+        <Link to="/Wedding" className="option-list"><li ><p>Wedding </p></li></Link>
+        <Link to="/Anniversary" className="option-list"><li >Anniversary</li></Link>
+        <Link to="/BabyName" className="option-list"><li >BabyName </li></Link>
+        <Link to="/BabyShower" className="option-list"><li>BabyShower</li></Link>
+        <Link to="/Birthday" className="option-list"><li>Birthday</li></Link>
+        <Link to="/Dhoti" className="option-list"><li>Dhoti</li></Link>
+        <Link to="/HalfSaree" className="option-list"><li>HalfSaree </li></Link>
+        <Link to="/Housewarming" className="option-list"><li>Housewarming </li></Link>
+        <Link to="/Lovestory" className="option-list"><li>Lovestory</li></Link>
+        <Link to="/Roka" className="option-list"><li>Roka </li></Link>
+        <Link to="/SaveTheDate" className="option-list"><li>SaveTheDate</li></Link>
       </ul>
     </div>
       
