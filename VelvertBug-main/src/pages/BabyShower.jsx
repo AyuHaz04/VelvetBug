@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 
 export default function BabyShower() {
     const {greeting_list,url,setImage} = useContext(StoreContext);
+
+    const updateImage = (image) => {
+      setImage(image);
+    }
+    
     const imgStyle2 = {
       width: '30rem' ,
       height: '50rem',
@@ -22,7 +27,7 @@ export default function BabyShower() {
               
               <div className="image">
                 <Link to="/CardEdit">
-                <img onClick={setImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
+                <img onClick={() => updateImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
               <div className="name">{item.name}</div>

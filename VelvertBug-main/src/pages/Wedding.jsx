@@ -6,12 +6,16 @@ import { Link } from "react-router-dom";
 export default function Wedding() {
 
   const {greeting_list,url,setImage} = useContext(StoreContext);
+
+  const updateImage = (image) => {
+    setImage(image);
+  }
+
     const imgStyle2 = {
       width: '30rem' ,
       height: '50rem',
       borderRadius: '10px',
       margin: '10px',
-      
     }
   return (
     <>
@@ -24,7 +28,7 @@ export default function Wedding() {
               
               <div className="image">
                 <Link to="/CardEdit">
-                <img onClick={setImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
+                <img onClick={() => updateImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
               <div className="name">{item.name}</div>

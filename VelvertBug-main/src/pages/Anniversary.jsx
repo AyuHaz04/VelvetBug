@@ -6,6 +6,11 @@ import './pagestyles.css';
 
 export default function Anniversary() {
     const {greeting_list,url,setImage} = useContext(StoreContext);
+
+    const updateImage = (image) => {
+      setImage(image);
+    }
+
     const imgStyle2 = {
       width: '30rem' ,
       height: '50rem',
@@ -21,10 +26,9 @@ export default function Anniversary() {
         {greeting_list.map((item) => { if(item.category == "Anniversary"){
           return ( 
             <div>
-              
               <div className="image">
                 <Link to="/CardEdit">
-                  <img onClick={setImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
+                  <img onClick={() => updateImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
               <div className="name">{item.name}</div>
