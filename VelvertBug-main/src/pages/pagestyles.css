@@ -8,26 +8,12 @@
     text-align: center;
 }
 
-
-
-/* .dancing-script- {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-size: 40px;
-  font-style: normal;
-} */
-
-
-
-
-
 .options{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 5px;
 
-  margin-left: 10rem;
+  margin-left: 1em;
   list-style-type: none;
   padding: 25px;
 }
@@ -77,3 +63,52 @@ h2{
  h1{
   color: rgb(233, 148, 148);
  }
+ .scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.img-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.scroll-arrow {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #000;
+  z-index: 1;
+}
+
+.img-container img {
+  flex-shrink: 0;
+}
+
+.para {
+  margin: 2vh 0;
+}
+
+.options {
+  list-style-type: none;
+  padding: 0;
+}
+
+.option-list {
+  text-decoration: none;
+}
+
+.option-list li {
+  margin: 1vh 0;
+}
+
+.img-container::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
