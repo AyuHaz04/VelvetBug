@@ -8,6 +8,12 @@ export default function Home() {
     const {greeting_list, url} = useContext(StoreContext);
     const imgStyle = {
         width: '80vh',
+        height: '100vh',
+        borderRadius: '10px',
+        margin: '1vh',
+    };
+    const imgStyle3 = {
+        width: '80vh',
         height: 'auto',
         borderRadius: '10px',
         margin: '1vh',
@@ -28,11 +34,10 @@ export default function Home() {
         <>
             <div className="scroll-container">
                 <div id="img-container" className="img-container">
-                    <img src="./images/img1.jpg" alt="" style={imgStyle} />
-                    <img src="./images/img2.jpg" alt="" style={imgStyle} />
-                    <img src="./images/img3.jpg" alt="" style={imgStyle} />
-                    <img src="./images/img4.jpg" alt="" style={imgStyle} />
-                    <img src="./images/img5.jpg" alt="" style={imgStyle} />
+                    <img src="./images/2ndr2.jpg" alt="" style={imgStyle3} />
+                    <img src="./images/2ndr3.jpg" alt="" style={imgStyle3} />
+                    <img src="./images/2ndr4.jpg" alt="" style={imgStyle3} />
+                    
                    
                 </div>
                 <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
@@ -69,10 +74,11 @@ export default function Home() {
             <div className="scroll-container">
                 <div id="img-container" className="img-container">
                     <img src="./images/2ndr1.jpg" alt="" style={imgStyle} />
-                    <img src="./images/2ndr2.jpg" alt="" style={imgStyle} />
-                    <img src="./images/2ndr3.jpg" alt="" style={imgStyle} />
-                    <img src="./images/2ndr4.jpg" alt="" style={imgStyle} />
-                    <img src="./images/2ndr5.jpg" alt="" style={imgStyle} />
+                    <img src="./images/img1.jpg" alt="" style={imgStyle} />
+                    <img src="./images/img2.jpg" alt="" style={imgStyle} />
+                    <img src="./images/img3.jpg" alt="" style={imgStyle} />
+                    <img src="./images/img4.jpg" alt="" style={imgStyle} />
+                    {/* <img src="./images/2ndr5.jpg" alt="" style={imgStyle} /> */}
                    
                 </div>
                 <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
