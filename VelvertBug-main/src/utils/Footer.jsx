@@ -14,9 +14,9 @@ export default function Footer(){
             <div className="f-contact">
                 <p><i class="fa-solid fa-phone"></i>Contact No. : +91 6290 053 389</p>
                 <p><i class="fa-solid fa-envelope"></i>Email :thevelvetbug29@gmail.com</p>
-                <p><span class="material-symbols-outlined">location_on</span>
+                {/* <p><span class="material-symbols-outlined">location_on</span>
                 Address:Ambli-Bopal Road, Near ISKCON Temple, Ahmedabad, Gujarat-380058
-                </p>
+                </p> */}
             </div>
 
         </div>

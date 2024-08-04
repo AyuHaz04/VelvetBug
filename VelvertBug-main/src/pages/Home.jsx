@@ -14,8 +14,8 @@ export default function Home() {
     };
 
     const imgStyle2 = {
-      width: '17vh',
-      height: 'auto',
+      width: '25vh',
+      height: '30vh',
       borderRadius: '10px',
       margin: '1vh',
   };
@@ -33,7 +33,7 @@ export default function Home() {
                     <img src="./images/img3.jpg" alt="" style={imgStyle} />
                     <img src="./images/img4.jpg" alt="" style={imgStyle} />
                     <img src="./images/img5.jpg" alt="" style={imgStyle} />
-                    {/* Add more images as needed */}
+                   
                 </div>
                 <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
             </div>
@@ -47,7 +47,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="dancing-script-categories-name">
+            <div className="categories-name">
                 <ul className="options">
                     <Link to="/Wedding" className="option-list"><li><p>Wedding</p></li></Link>
                     <Link to="/Anniversary" className="option-list"><li>Anniversary</li></Link>
@@ -63,11 +63,30 @@ export default function Home() {
                 </ul>
             </div>
 
+            <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2}/>
+            <img src="./images/design1.png" alt="Right Decorative" className="side-image right-image" style={imgStyle2}/>
+
+            <div className="scroll-container">
+                <div id="img-container" className="img-container">
+                    <img src="./images/2ndr1.jpg" alt="" style={imgStyle} />
+                    <img src="./images/2ndr2.jpg" alt="" style={imgStyle} />
+                    <img src="./images/2ndr3.jpg" alt="" style={imgStyle} />
+                    <img src="./images/2ndr4.jpg" alt="" style={imgStyle} />
+                    <img src="./images/2ndr5.jpg" alt="" style={imgStyle} />
+                   
+                </div>
+                <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
+            </div>
+
           
             <div className="bottom-images">
-                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2}/>
+                {/* <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2}/> */}
+                {/* <img src="./images/design1.png" alt="Right Decorative" className="side-image right-image" style={imgStyle2}/> */}
+                <div className="review-box">
                 <div className="elfsight-app-a8680cb6-cbe9-4c4d-a377-8dd06303dae1" data-elfsight-app-lazy></div>
-                <img src="./images/design1.png" alt="Right Decorative" className="side-image right-image" style={imgStyle2}/>
+                </div>
+                
+                
             </div>
         </>
     );
