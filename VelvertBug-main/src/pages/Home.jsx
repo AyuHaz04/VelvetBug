@@ -54,7 +54,7 @@ export default function Home() {
 
             <div className="categories-name">
                 <ul className="options">
-                    <Link to="/Wedding" className="option-list"><li><p>Wedding</p></li></Link>
+                    <Link to="/Wedding" className="option-list"><li>Wedding</li></Link>
                     <Link to="/Anniversary" className="option-list"><li>Anniversary</li></Link>
                     <Link to="/BabyName" className="option-list"><li>Baby Name</li></Link>
                     <Link to="/BabyShower" className="option-list"><li>Baby Shower</li></Link>
@@ -78,7 +78,7 @@ export default function Home() {
                     <img src="./images/img2.jpg" alt="" style={imgStyle} />
                     <img src="./images/img3.jpg" alt="" style={imgStyle} />
                     <img src="./images/img4.jpg" alt="" style={imgStyle} />
-                    {/* <img src="./images/2ndr5.jpg" alt="" style={imgStyle} /> */}
+                   
                    
                 </div>
                 <FaArrowRight className="scroll-arrow" onClick={scrollRight} />

@@ -59,9 +59,14 @@
 
 h2{
   text-align: center;
+  color: rgb(233, 148, 148);
 }
  h1{
   color: rgb(233, 148, 148);
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
  }
  .scroll-container {
   position: relative;

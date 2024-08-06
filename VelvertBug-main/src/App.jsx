@@ -14,6 +14,7 @@ import Roka from "./pages/Roka"
 import SaveTheDate from "./pages/SaveTheDate"
 import Wedding from "./pages/Wedding"
 import CardEdit from "./pages/CardEdit"
+import CardCustomize from "./pages/CardCustomize"
 
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
         <Route path="/SaveTheDate" element={<SaveTheDate/>}></Route>
         <Route path="/Wedding" element={<Wedding/>}></Route>
         <Route path="/CardEdit" element={<CardEdit/>}></Route>
+        <Route path="/CardCustomize" element={<CardCustomize/>}></Route>
         
       </Routes>
       <Footer/>
