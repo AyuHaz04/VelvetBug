@@ -95,8 +95,7 @@ export default function Home() {
 
           
             <div className="bottom-images">
-                {/* <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2}/> */}
-                {/* <img src="./images/design1.png" alt="Right Decorative" className="side-image right-image" style={imgStyle2}/> */}
+               
                 <div className="review-box">
                 <div className="elfsight-app-a8680cb6-cbe9-4c4d-a377-8dd06303dae1" data-elfsight-app-lazy></div>
                 </div>
