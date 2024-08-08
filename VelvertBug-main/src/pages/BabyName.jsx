@@ -19,7 +19,7 @@ export default function BabyName() {
     }
   return (
     <>
-      <h2>BabyName Cards</h2>
+      <h2 className='pageHead'>BabyName Cards</h2>
 
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "BabyName"){

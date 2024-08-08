@@ -19,7 +19,7 @@ export default function Wedding() {
     }
   return (
     <>
-      <h2>Wedding Cards</h2>
+      <h2 className='pageHead'>Wedding Cards</h2>
 
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "Wedding"){

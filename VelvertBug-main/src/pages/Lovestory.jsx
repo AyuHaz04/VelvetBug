@@ -20,7 +20,7 @@ export default function Lovestory() {
     }
   return (
     <>
-      <h2>LoveStory Cards</h2>
+      <h2 className='pageHead'>LoveStory Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "Lovestory"){
           return (

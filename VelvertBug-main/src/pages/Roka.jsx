@@ -19,7 +19,7 @@ export default function Roka() {
     }
   return (
     <>
-      <h2>Roka Ceremony cards</h2>
+      <h2 className='pageHead'>Roka Ceremony cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "Roka"){
           return (

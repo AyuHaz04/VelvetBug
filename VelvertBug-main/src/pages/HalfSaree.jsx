@@ -19,7 +19,7 @@ export default function HalfSaree() {
     }
   return (
     <>
-      <h2>HalfSaree Ceremony Cards</h2>
+      <h2 className='pageHead'>HalfSaree Ceremony Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "HalfSaree"){
           return (

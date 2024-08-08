@@ -59,7 +59,7 @@ const handleImageLoad = () => {
 
   return (
     <div className="App-main">
-      <h1>Customize your card</h1>
+      <h1 className='pageHead'>Customize your card</h1>
       <div className="container">
         <div className="controls">
           {texts.map((textItem, index) => (

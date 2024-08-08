@@ -19,7 +19,7 @@ export default function Birthday() {
     }
   return (
     <>
-      <h2>Birthday Cards</h2>
+      <h2 className='pageHead'>Birthday Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "Birthday"){
           return (

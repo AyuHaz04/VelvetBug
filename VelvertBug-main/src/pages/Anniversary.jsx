@@ -20,7 +20,7 @@ export default function Anniversary() {
     }
   return (
     <>
-      <h2>Anniversary cards</h2>
+      <h2 className='pageHead'>Anniversary cards</h2>
 
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "Anniversary"){

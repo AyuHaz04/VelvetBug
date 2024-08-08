@@ -19,7 +19,7 @@ export default function Dhoti() {
     }
   return (
     <>
-      <h2>Dhoti Ceremony Cards</h2>
+      <h2 className='pageHead'>Dhoti Ceremony Cards</h2>
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "Dhoti"){
           return (
