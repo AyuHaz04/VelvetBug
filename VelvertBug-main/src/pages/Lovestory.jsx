@@ -31,9 +31,7 @@ export default function Lovestory() {
                 <img onClick={() => updateImage(item.image)} src={url + "/images/" + item.image} alt="" style={imgStyle2}/>
                 </Link>
               </div>
-              <div className="name">{item.name}</div>
-              <div className="description">{item.font}</div>
-              <div className="price">{item.price}</div>
+              
             </div>
           );
         }
