@@ -41,12 +41,21 @@ const CardEdit = () => {
   };
 
   const handleDownload = async () => {
-    const canvas = await html2canvas(imageRef.current);
+    const canvas = await html2canvas(imageRef.current,{
+      useCORS: true,
+    });
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
     link.download = 'image-with-text.png';
     link.click();
   };
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+const handleImageLoad = () => {
+  setImageLoaded(true);
+};
+
 
   return (
     <div className="App-main">
@@ -85,7 +94,13 @@ const CardEdit = () => {
           <button onClick={handleDownload}>Download Image</button>
         </div>
         <div className="image-container" ref={imageRef}>
-          <img src={url + "/images/" + img} alt="Placeholder" />
+              <img
+                src={url + "/images/" + img}
+                alt="Placeholder"
+                crossOrigin="anonymous"
+                onLoad={handleImageLoad}
+              />
+          
           {texts.map((textItem, index) => (
             <Rnd
               key={index}
