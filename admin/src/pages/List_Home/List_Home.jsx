@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import './List.css'
+import './List_Home.css'
 import { url, currency } from '../../assets/assets'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const List = () => {
+const List_Home = () => {
 
   const [list, setList] = useState([]);
 
@@ -46,16 +46,16 @@ const List = () => {
           <b>Price</b>
           <b>Action</b>
         </div>
-        {list.map((item, index) => { if(item.category !== "Top" && item.category !== "Bottom"){
-          return (
-            <div key={index} className='list-table-format'>
-              <img src={`${url}/images/` + item.image} alt="" />
-              <p>{item.name}</p>
-              <p>{item.category}</p>
-              <p>{currency}{item.price}</p>
-              <p className='cursor' onClick={() => removeFood(item._id)}>x</p>
-            </div>
-          )
+        {list.map((item, index) => {if(item.category === "Top" || item.category === "Bottom"){
+            return (
+                <div key={index} className='list-table-format'>
+                  <img src={`${url}/images/` + item.image} alt="" />
+                  <p>{item.name}</p>
+                  <p>{item.category}</p>
+                  <p>{currency}{item.price}</p>
+                  <p className='cursor' onClick={() => removeFood(item._id)}>x</p>
+                </div>
+              )
         }
           
         })}
@@ -64,4 +64,4 @@ const List = () => {
   )
 }
 
-export default List
+export default List_Home

@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
-import './Add.css'
+import './Add_Home.css'
 import { assets, url } from '../../assets/assets';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const Add = () => {
+const Add_Home = () => {
 
 
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
         name: "",
-        font: "",
-        price: "",
-        category: "Anniversary"
+        font: "none",
+        price: "0",
+        category: "Top"
     });
 
     const onSubmitHandler = async (event) => {
@@ -34,8 +34,8 @@ const Add = () => {
             toast.success(response.data.message)
             setData({
                 name: "",
-                font: "",
-                price: "",
+                font: "none",
+                price: "0",
                 category: data.category
             })
             setImage(false);
@@ -67,40 +67,19 @@ const Add = () => {
                 </div>
                 <div className='add-product-description flex-col'>
                     <p>Font Style</p>
-                    <textarea name='font' onChange={onChangeHandler} value={data.font} type="text" rows={6} placeholder='Write Font here' required />
+                    <textarea name='font' onChange={onChangeHandler} value={data.font} type="text" rows={6} placeholder='None' disabled />
                 </div>
                 <div className='add-category-price'>
                     <div className='add-category flex-col'>
                         <p>Card category</p>
                         <select name='category' onChange={onChangeHandler} >
-                            <option value="Anniversary">Anniversary</option>
-                            <option value="BabyName">BabyName</option>
-                            <option value="BabyShower">BabyShower</option>
-                            <option value="Birthday">Birthday</option>
-                            <option value="Dhoti">Dhoti</option>
-                            <option value="HalfSaree">HalfSaree</option>
-                            <option value="Home">Home</option>
-                            <option value="Housewarming">Housewarming</option>
-                            <option value="Lovestory">Lovestory</option>
-                            <option value="Roka">Roka</option>
-                            <option value="SaveTheDate">SaveTheDate</option>
-                            <option value="Wedding">Wedding</option>
-                            <option value="Anniversary">Anniversary_c</option>
-                            <option value="BabyName">BabyName_c</option>
-                            <option value="BabyShower">BabyShower_c</option>
-                            <option value="Birthday">Birthday_c</option>
-                            <option value="Dhoti">Dhoti_c</option>
-                            <option value="HalfSaree">HalfSaree_c</option>
-                            <option value="Housewarming">Housewarming_c</option>
-                            <option value="Lovestory">Lovestory_c</option>
-                            <option value="Roka">Roka_c</option>
-                            <option value="SaveTheDate">SaveTheDate_c</option>
-                            <option value="Wedding">Wedding_c</option>
+                            <option value="Top">Top</option>
+                            <option value="Bottom">Bottom</option>
                         </select>
                     </div>
                     <div className='add-price flex-col'>
                         <p>Product Price</p>
-                        <input type="Number" name='price' onChange={onChangeHandler} value={data.price} placeholder='25' />
+                        <input type="Number" name='price' onChange={onChangeHandler} value={data.price} placeholder='0'disabled />
                     </div>
                 </div>
                 <button type='submit' className='add-btn' >ADD</button>
@@ -109,4 +88,4 @@ const Add = () => {
     )
 }
 
-export default Add
+export default Add_Home

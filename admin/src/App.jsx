@@ -6,6 +6,8 @@ import Add from './pages/Add/Add'
 import List from './pages/List/List'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Add_Home from './pages/Add_Home/Add_Home'
+import List_Home from './pages/List_Home/List_Home'
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Routes>
           <Route path="/add" element={<Add />} />
           <Route path="/list" element={<List />} />
+          <Route path="/add_home" element={<Add_Home/>}/>
+          <Route path="/list_home" element={<List_Home/>}/>
         </Routes>
       </div>
     </div>

@@ -33,13 +33,23 @@ export default function Home() {
     return (
         <>
             <div className="scroll-container">
+            
                 <div id="img-container" className="img-container">
-                    <img src="./images/2ndr2.jpg" alt="" style={imgStyle3} />
-                    <img src="./images/2ndr3.jpg" alt="" style={imgStyle3} />
-                    <img src="./images/2ndr4.jpg" alt="" style={imgStyle3} />
+                {greeting_list.map((item) => { if(item.category == "Top"){
+                    // <img src="./images/2ndr2.jpg" alt="" style={imgStyle3} />
+                    // <img src="./images/2ndr3.jpg" alt="" style={imgStyle3} />
+                    // <img src="./images/2ndr4.jpg" alt="" style={imgStyle3} />
+                    return (
+                        <img src={url + "/images/" + item.image} alt="" style={imgStyle3}/>
+                    );
+                    
+                }
+          
+                })}
                     
                    
                 </div>
+                
                 <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
             </div>
 
@@ -73,11 +83,18 @@ export default function Home() {
 
             <div className="scroll-container">
                 <div id="img-container" className="img-container">
-                    <img src="./images/2ndr1.jpg" alt="" style={imgStyle} />
+                    {/* <img src="./images/2ndr1.jpg" alt="" style={imgStyle} />
                     <img src="./images/img1.jpg" alt="" style={imgStyle} />
                     <img src="./images/img2.jpg" alt="" style={imgStyle} />
                     <img src="./images/img3.jpg" alt="" style={imgStyle} />
-                    <img src="./images/img4.jpg" alt="" style={imgStyle} />
+                    <img src="./images/img4.jpg" alt="" style={imgStyle} /> */}
+                    {greeting_list.map((item) => { if(item.category == "Bottom"){
+                    return (
+                        <img src={url + "/images/" + item.image} alt="" style={imgStyle3}/>
+                    );
+                }
+          
+                })}
                    
                    
                 </div>
