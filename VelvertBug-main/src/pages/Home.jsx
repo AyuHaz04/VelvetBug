@@ -57,7 +57,19 @@ export default function Home() {
             </div>
 
             <div className="categories-name">
-               
+                <ul className="options">
+                    <Link to="/Wedding" className="option-list"><li>Wedding</li></Link>
+                    <Link to="/Anniversary" className="option-list"><li>Anniversary</li></Link>
+                    <Link to="/BabyName" className="option-list"><li>Baby Name</li></Link>
+                    <Link to="/BabyShower" className="option-list"><li>Baby Shower</li></Link>
+                    <Link to="/Birthday" className="option-list"><li>Birthday</li></Link>
+                    <Link to="/Dhoti" className="option-list"><li>Dhoti</li></Link>
+                    <Link to="/HalfSaree" className="option-list"><li>Half Saree</li></Link>
+                    <Link to="/Housewarming" className="option-list"><li>Housewarming</li></Link>
+                    <Link to="/Lovestory" className="option-list"><li>Love Story</li></Link>
+                    <Link to="/Roka" className="option-list"><li>Roka</li></Link>
+                    <Link to="/SaveTheDate" className="option-list"><li>Save The Date</li></Link>
+                </ul>
             </div>
 
             <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2}/>
