@@ -1,9 +1,49 @@
 .Header{
     background-color:rgb(233, 148, 148);
-    height: 70px;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background-color: #f8f9fa; */
 }
 
+.Navbar {
+  display: flex;
+  align-items: center;
+}
 
+.CategoryMenu {
+  position: relative;
+  cursor: pointer;
+}
+
+.Icon {
+  font-size: 40px;
+  color:  rgb(245, 226, 226);
+  margin-right: 30px;
+  
+}
+
+.DropdownMenu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.DropdownMenu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.DropdownMenu a:hover {
+  background-color: #f0f0f0;
+}
 
 
   .cinzel,h1 {
@@ -14,4 +54,13 @@
     text-align: center;
     font-style: normal;
     color: rgb(245, 226, 226)
+  }
+
+  .AboutMeLink{
+    color: rgb(245, 226, 226);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+    margin-right: 10vh;
+    font-family: "Cinzel", serif;
   }

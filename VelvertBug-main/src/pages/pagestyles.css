@@ -140,3 +140,6 @@ h2{
   display: none;  /* Safari and Chrome */
 }
 
+.Quote{
+  font-size: 40px;
+}

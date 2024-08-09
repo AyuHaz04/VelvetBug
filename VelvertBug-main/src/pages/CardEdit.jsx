@@ -56,44 +56,26 @@ const handleImageLoad = () => {
   setImageLoaded(true);
 };
 
+const imgStyle2 = {
+  width: '30rem' ,
+  height: '50rem',
+  borderRadius: '10px',
+  margin: '5vh',
+  
+}
 
   return (
     <div className="App-main">
       <h1 className='pageHead'>Customize your card</h1>
       <div className="container">
-        <div className="controls">
-          {texts.map((textItem, index) => (
-            <div key={index} className="text-controls">
-              <input
-                type="text"
-                placeholder={`Enter text ${index + 1}`}
-                value={textItem.text}
-                onChange={(e) => handleTextChange(index, e)}
-              />
-              <input
-                type="range"
-                min="10"
-                max="50"
-                value={textItem.fontSize}
-                onChange={(e) => handleFontSizeChange(index, e)}
-              />
-              <span>{textItem.fontSize}px</span>
-              <select value={textItem.fontStyle} onChange={(e) => handleFontStyleChange(index, e)}>
-                <option value="Chopin Script">Chopin Script</option>
-                <option value="Great Vibes">Great Vibes</option>
-                <option value="Cinzel">Cinzel</option>
-              </select>
-              <input
-                type="color"
-                value={textItem.color}
-                onChange={(e) => handleColorChange(index, e)}
-              />
+      <div className="image-section left-image">
+            <img
+              src="../public/images/img1.jpg"
+              alt="Additional"
+              style={imgStyle2}
+            />
             </div>
-          ))}
-          <button onClick={handleAddTextbox}>Add Textbox</button>
-          <button onClick={handleDownload}>Download Image</button>
-        </div>
-        <div className="image-container" ref={imageRef}>
+      <div className="image-container" ref={imageRef}>
               <img
                 src={url + "/images/" + img}
                 alt="Placeholder"
@@ -132,6 +114,39 @@ const handleImageLoad = () => {
             </Rnd>
           ))}
         </div>
+        <div className="controls">
+          {texts.map((textItem, index) => (
+            <div key={index} className="text-controls">
+              <input
+                type="text"
+                placeholder={`Enter text ${index + 1}`}
+                value={textItem.text}
+                onChange={(e) => handleTextChange(index, e)}
+              />
+              <input
+                type="range"
+                min="10"
+                max="50"
+                value={textItem.fontSize}
+                onChange={(e) => handleFontSizeChange(index, e)}
+              />
+              <span>{textItem.fontSize}px</span>
+              <select value={textItem.fontStyle} onChange={(e) => handleFontStyleChange(index, e)}>
+                <option value="Chopin Script">Chopin Script</option>
+                <option value="Great Vibes">Great Vibes</option>
+                <option value="Cinzel">Cinzel</option>
+              </select>
+              <input
+                type="color"
+                value={textItem.color}
+                onChange={(e) => handleColorChange(index, e)}
+              />
+            </div>
+          ))}
+          <button onClick={handleAddTextbox}>Add Textbox</button>
+          <button onClick={handleDownload}>Download Image</button>
+        </div>
+        
       </div>
     </div>
   );
