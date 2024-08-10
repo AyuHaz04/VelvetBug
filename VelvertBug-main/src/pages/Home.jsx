@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { StoreContext } from '../assets/Components/Context/StoreContext';
 import "./pagestyles.css";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from 'react-icons/fa';
 
 export default function Home() {
-    const {greeting_list, url} = useContext(StoreContext);
+    const { greeting_list, url } = useContext(StoreContext);
+
     const imgStyle = {
         width: '80vh',
         height: '100vh',
@@ -20,39 +21,55 @@ export default function Home() {
     };
 
     const imgStyle2 = {
-      width: '25vh',
-      height: '30vh',
-      borderRadius: '10px',
-      margin: '1vh',
-  };
-
-    const scrollRight = () => {
-        document.getElementById('img-container').scrollBy({ left: 200, behavior: 'smooth' });
+        width: '25vh',
+        height: '30vh',
+        borderRadius: '10px',
+        margin: '1vh',
     };
+
+    const scrollRight = (containerId) => {
+        const container = document.getElementById(containerId);
+        container.scrollBy({ left: 40, behavior: 'smooth' });
+
+        // Loop the scroll
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+            container.scrollLeft = 0;
+        }
+    };
+
+    useEffect(() => {
+        const scrollInterval1 = setInterval(() => {
+            scrollRight('img-container-1');
+        }, 10); // Adjust the time in milliseconds for the speed of scrolling
+
+        const scrollInterval2 = setInterval(() => {
+            scrollRight('img-container-2');
+        }, 10); // Adjust the time in milliseconds for the speed of scrolling
+
+        return () => {
+            clearInterval(scrollInterval1);
+            clearInterval(scrollInterval2);
+        };
+    }, []);
 
     return (
         <>
             <div className="scroll-container">
-            
-                <div id="img-container" className="img-container">
-                {greeting_list.map((item) => { if(item.category == "Top"){
-                    return (
-                        <img src={url + "/images/" + item.image} alt="" style={imgStyle3}/>
-                    );
-                    
-                }
-          
-                })}
-                    
-                   
+                <div id="img-container-1" className="img-container">
+                    {greeting_list.map((item) => {
+                        if (item.category === "Top") {
+                            return (
+                                <img src={url + "/images/" + item.image} alt="" style={imgStyle3} key={item.image} />
+                            );
+                        }
+                    })}
                 </div>
-                
-                <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
+                <FaArrowRight className="scroll-arrow" onClick={() => scrollRight('img-container-1')} />
             </div>
 
             <div className="para" id="para1">
                 <p className='Quote'>
-                    "  With each invite, we weave moments into memories  "
+                    " With each invite, we weave moments into memories "
                 </p>
             </div>
 
@@ -72,32 +89,27 @@ export default function Home() {
                 </ul>
             </div>
 
-            <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2}/>
-            <img src="./images/design1.png" alt="Right Decorative" className="side-image right-image" style={imgStyle2}/>
+            <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
 
             <div className="scroll-container">
-                <div id="img-container" className="img-container">
-                    {greeting_list.map((item) => { if(item.category == "Bottom"){
-                    return (
-                        <img src={url + "/images/" + item.image} alt="" style={imgStyle}/>
-                    );
-                }
-          
-                })}
-                   
-                   
+                <div id="img-container-2" className="img-container">
+                    {greeting_list.map((item) => {
+                        if (item.category === "Bottom") {
+                            return (
+                                <img src={url + "/images/" + item.image} alt="" style={imgStyle} key={item.image} />
+                            );
+                        }
+                    })}
                 </div>
-                <FaArrowRight className="scroll-arrow" onClick={scrollRight} />
+                <FaArrowRight className="scroll-arrow" onClick={() => scrollRight('img-container-2')} />
             </div>
 
-          
+            <h1 className='review'>Reviews</h1>
+
             <div className="bottom-images">
-               
                 <div className="review-box">
-                <div className="elfsight-app-a8680cb6-cbe9-4c4d-a377-8dd06303dae1" data-elfsight-app-lazy></div>
+                    <div className="elfsight-app-a8680cb6-cbe9-4c4d-a377-8dd06303dae1" data-elfsight-app-lazy></div>
                 </div>
-                
-                
             </div>
         </>
     );

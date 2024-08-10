@@ -66,7 +66,7 @@ const imgStyle2 = {
 
   return (
     <div className="App-main">
-      <h1 className='pageHead'>Customize your card</h1>
+      <p className='pageHead'>Customize your card</p>
       <div className="container">
       <div className="image-section left-image">
             <img

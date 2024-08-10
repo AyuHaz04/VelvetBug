@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  position: relative; 
   /* background-color: #f8f9fa; */
 }
 
@@ -21,28 +22,30 @@
   font-size: 40px;
   color:  rgb(245, 226, 226);
   margin-right: 30px;
-  
+  cursor: pointer;
 }
 
 .DropdownMenu {
   position: absolute;
-  top: 30px;
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .DropdownMenu a {
-  display: block;
-  padding: 10px 20px;
+  padding: 8px 12px;
   text-decoration: none;
-  color: #333;
+  color: black;
 }
 
 .DropdownMenu a:hover {
-  background-color: #f0f0f0;
+  background-color: #f1f1f1;
 }
 
 
