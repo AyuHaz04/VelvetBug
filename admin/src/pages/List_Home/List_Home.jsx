@@ -9,7 +9,7 @@ const List_Home = () => {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
-    const response = await axios.get(`${url}/api/greeting/list`)
+    const response = await axios.get(`${url}/api/home/list`)
     if (response.data.success) {
       setList(response.data.data);
     }
@@ -19,7 +19,7 @@ const List_Home = () => {
   }
 
   const removeFood = async (greetingId) => {
-    const response = await axios.post(`${url}/api/greeting/remove`, {
+    const response = await axios.post(`${url}/api/home/remove`, {
       id: greetingId
     })
     await fetchList();
@@ -43,7 +43,6 @@ const List_Home = () => {
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
-          <b>Price</b>
           <b>Action</b>
         </div>
         {list.map((item, index) => {if(item.category === "Top" || item.category === "Bottom"){
@@ -52,7 +51,6 @@ const List_Home = () => {
                   <img src={`${url}/images/` + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>{item.category}</p>
-                  <p>{currency}{item.price}</p>
                   <p className='cursor' onClick={() => removeFood(item._id)}>x</p>
                 </div>
               )

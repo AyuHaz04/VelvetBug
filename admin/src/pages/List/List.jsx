@@ -44,6 +44,7 @@ const List = () => {
           <b>Name</b>
           <b>Category</b>
           <b>Price</b>
+          <b>Discount</b>
           <b>Action</b>
         </div>
         {list.map((item, index) => { if(item.category !== "Top" && item.category !== "Bottom"){
@@ -53,6 +54,7 @@ const List = () => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{currency}{item.price}</p>
+              <p>{item.discount}</p>
               <p className='cursor' onClick={() => removeFood(item._id)}>x</p>
             </div>
           )

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from 'react-icons/fa';
 
 export default function Home() {
-    const { greeting_list, url } = useContext(StoreContext);
+    const { greeting_list,home_list, url } = useContext(StoreContext);
 
     const imgStyle = {
         width: '80vh',
@@ -56,7 +56,7 @@ export default function Home() {
         <>
             <div className="scroll-container">
                 <div id="img-container-1" className="img-container">
-                    {greeting_list.map((item) => {
+                    {home_list.map((item) => {
                         if (item.category === "Top") {
                             return (
                                 <img src={url + "/images/" + item.image} alt="" style={imgStyle3} key={item.image} />
@@ -93,7 +93,7 @@ export default function Home() {
 
             <div className="scroll-container">
                 <div id="img-container-2" className="img-container">
-                    {greeting_list.map((item) => {
+                    {home_list.map((item) => {
                         if (item.category === "Bottom") {
                             return (
                                 <img src={url + "/images/" + item.image} alt="" style={imgStyle} key={item.image} />

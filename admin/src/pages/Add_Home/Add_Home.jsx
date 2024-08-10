@@ -10,8 +10,6 @@ const Add_Home = () => {
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
         name: "",
-        font: "none",
-        price: "0",
         category: "Top"
     });
 
@@ -25,17 +23,13 @@ const Add_Home = () => {
 
         const formData = new FormData();
         formData.append("name", data.name);
-        formData.append("font", data.font);
-        formData.append("price", Number(data.price));
         formData.append("category", data.category);
         formData.append("image", image);
-        const response = await axios.post(`${url}/api/greeting/add`, formData);
+        const response = await axios.post(`${url}/api/home/add`, formData);
         if (response.data.success) {
             toast.success(response.data.message)
             setData({
                 name: "",
-                font: "none",
-                price: "0",
                 category: data.category
             })
             setImage(false);
@@ -65,10 +59,6 @@ const Add_Home = () => {
                     <p>Product name</p>
                     <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Type here' required />
                 </div>
-                <div className='add-product-description flex-col'>
-                    <p>Font Style</p>
-                    <textarea name='font' onChange={onChangeHandler} value={data.font} type="text" rows={6} placeholder='None' disabled />
-                </div>
                 <div className='add-category-price'>
                     <div className='add-category flex-col'>
                         <p>Card category</p>
@@ -76,10 +66,6 @@ const Add_Home = () => {
                             <option value="Top">Top</option>
                             <option value="Bottom">Bottom</option>
                         </select>
-                    </div>
-                    <div className='add-price flex-col'>
-                        <p>Product Price</p>
-                        <input type="Number" name='price' onChange={onChangeHandler} value={data.price} placeholder='0'disabled />
                     </div>
                 </div>
                 <button type='submit' className='add-btn' >ADD</button>

@@ -10,7 +10,7 @@ const Add = () => {
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
         name: "",
-        font: "",
+        description: "",
         price: "",
         category: "Anniversary"
     });
@@ -25,9 +25,10 @@ const Add = () => {
 
         const formData = new FormData();
         formData.append("name", data.name);
-        formData.append("font", data.font);
+        formData.append("description", data.description);
         formData.append("price", Number(data.price));
         formData.append("category", data.category);
+        formData.append("discount",Number(data.discount));
         formData.append("image", image);
         const response = await axios.post(`${url}/api/greeting/add`, formData);
         if (response.data.success) {
@@ -36,6 +37,7 @@ const Add = () => {
                 name: "",
                 font: "",
                 price: "",
+                discount: "",
                 category: data.category
             })
             setImage(false);
@@ -66,8 +68,8 @@ const Add = () => {
                     <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Type here' required />
                 </div>
                 <div className='add-product-description flex-col'>
-                    <p>Font Style</p>
-                    <textarea name='font' onChange={onChangeHandler} value={data.font} type="text" rows={6} placeholder='Write Font here' required />
+                    <p>Description</p>
+                    <textarea name='description' onChange={onChangeHandler} value={data.description} type="text" rows={6} placeholder='Write Description here' required />
                 </div>
                 <div className='add-category-price'>
                     <div className='add-category flex-col'>
@@ -85,22 +87,26 @@ const Add = () => {
                             <option value="Roka">Roka</option>
                             <option value="SaveTheDate">SaveTheDate</option>
                             <option value="Wedding">Wedding</option>
-                            <option value="Anniversary">Anniversary_c</option>
-                            <option value="BabyName">BabyName_c</option>
-                            <option value="BabyShower">BabyShower_c</option>
-                            <option value="Birthday">Birthday_c</option>
-                            <option value="Dhoti">Dhoti_c</option>
-                            <option value="HalfSaree">HalfSaree_c</option>
-                            <option value="Housewarming">Housewarming_c</option>
-                            <option value="Lovestory">Lovestory_c</option>
-                            <option value="Roka">Roka_c</option>
-                            <option value="SaveTheDate">SaveTheDate_c</option>
-                            <option value="Wedding">Wedding_c</option>
+                            <option value="Anniversary_c">Anniversary_c</option>
+                            <option value="BabyName_c">BabyName_c</option>
+                            <option value="BabyShower_c">BabyShower_c</option>
+                            <option value="Birthday_c">Birthday_c</option>
+                            <option value="Dhoti_c">Dhoti_c</option>
+                            <option value="HalfSaree_c">HalfSaree_c</option>
+                            <option value="Housewarming_c">Housewarming_c</option>
+                            <option value="Lovestory_c">Lovestory_c</option>
+                            <option value="Roka_c">Roka_c</option>
+                            <option value="SaveTheDate_c">SaveTheDate_c</option>
+                            <option value="Wedding_c">Wedding_c</option>
                         </select>
                     </div>
                     <div className='add-price flex-col'>
                         <p>Product Price</p>
                         <input type="Number" name='price' onChange={onChangeHandler} value={data.price} placeholder='25' />
+                    </div>
+                    <div className='add-price flex-col'>
+                        <p>Product Discount</p>
+                        <input type="Number" name='discount' onChange={onChangeHandler} value={data.discount} placeholder='25' />
                     </div>
                 </div>
                 <button type='submit' className='add-btn' >ADD</button>

@@ -2,6 +2,7 @@ import express  from "express"
 import cors from 'cors'
 import { connectDB } from "./config/db.js"
 import greetingRouter from "./routes/greetingRoute.js"
+import homeRouter from "./routes/homeRoute.js"
 import 'dotenv/config'
 
 // app config
@@ -18,6 +19,7 @@ connectDB()
 
 // api endpoints
 app.use("/api/greeting", greetingRouter)
+app.use("/api/home" , homeRouter)
 app.use("/images",express.static('uploads'))
 
 app.get("/", (req, res) => {

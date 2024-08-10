@@ -20,6 +20,7 @@
 .add-category-price{
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 .add-category-price select,.add-category-price input{
     max-width: 120px;
