@@ -21,8 +21,9 @@ const addGreeting = async (req, res) => {
 
         const greeting = new greetingModel({
             name: req.body.name,
-            font: req.body.font,
+            description: req.body.description,
             price: req.body.price,
+            discount: req.body.discount,
             category:req.body.category,
             image: image_filename,
         })
