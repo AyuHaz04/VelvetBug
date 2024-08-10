@@ -5,7 +5,7 @@ import './CardEdit.css';
 import { StoreContext } from '../assets/Components/Context/StoreContext';
 
 const CardEdit = () => {
-  const { url, img } = useContext(StoreContext);
+  const { url, img, img1 } = useContext(StoreContext);
   const [texts, setTexts] = useState([
     { text: '', fontSize: 24, fontStyle: 'Chopin Script', color: '#000000', textSize: { width: 200, height: 50 }, position: { x: 50, y: 50 } }
   ]);
@@ -70,7 +70,8 @@ const imgStyle2 = {
       <div className="container">
       <div className="image-section left-image">
             <img
-              src="../public/images/img1.jpg"
+              // src="../public/images/img1.jpg"
+              src={url + "/images/" + img1}
               alt="Additional"
               style={imgStyle2}
             />

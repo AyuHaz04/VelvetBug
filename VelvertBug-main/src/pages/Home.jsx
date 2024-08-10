@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from 'react-icons/fa';
 
 export default function Home() {
-    const { greeting_list,home_list, url } = useContext(StoreContext);
+    const { home_list, url } = useContext(StoreContext);
 
     const imgStyle = {
         width: '80vh',

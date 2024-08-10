@@ -15,7 +15,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage})
 
 greetingRouter.get("/list",listGreeting);
-greetingRouter.post("/add",upload.single('image'),addGreeting);
+greetingRouter.post("/add", upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'image1', maxCount: 1 }
+]), addGreeting);
 greetingRouter.post("/remove",removeGreeting);
 
 export default greetingRouter;
