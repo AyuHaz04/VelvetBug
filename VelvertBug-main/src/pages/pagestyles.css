@@ -82,6 +82,7 @@ h2{
   align-items: center;
   position: relative;
   overflow-x: auto;
+  margin-top: 7vh;
 }
 
 .scroll-arrow {
