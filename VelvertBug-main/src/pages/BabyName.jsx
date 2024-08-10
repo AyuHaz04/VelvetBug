@@ -21,6 +21,14 @@ export default function BabyName() {
     <>
       <h2 className='pageHead'>BabyName Cards</h2>
 
+      
+      <div className="filters">
+                <button onClick={() => setFilter('299-399')}>299-399 /n</button>
+                <button onClick={() => setFilter('1999-4999')}>1999-4999</button>
+                <button onClick={() => setFilter('5999-9999')}>5999-9999</button>
+                <button onClick={() => setFilter('')}>Clear Filters</button>
+            </div>
+
       <div className="card-display-list">
         {greeting_list.map((item) => { if(item.category == "BabyName"){
           return ( 
