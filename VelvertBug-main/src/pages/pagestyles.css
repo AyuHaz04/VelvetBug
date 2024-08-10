@@ -68,6 +68,7 @@ h2{
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  margin-top: 2vh;
  }
  .scroll-container {
   position: relative;
@@ -147,4 +148,22 @@ h2{
 
 .review{
   color: rgb(236, 59, 59);
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin-bottom: 5vh;
+}
+
+.quote-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.midpic{
+  display: flex;
+  justify-content:space-between; 
+  
 }

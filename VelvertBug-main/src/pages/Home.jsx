@@ -27,6 +27,13 @@ export default function Home() {
         margin: '1vh',
     };
 
+    const icon1 = {
+        width: '30vh',
+        height: '15vh',
+        borderRadius: '10px',
+        margin: '1vh',
+    };
+
     const scrollRight = (containerId) => {
         const container = document.getElementById(containerId);
         container.scrollBy({ left: 40, behavior: 'smooth' });
@@ -73,6 +80,12 @@ export default function Home() {
                 </p>
             </div>
 
+            
+            <div class="container">
+                  <img src="./images/imgbelowquote.png" className="quote-img" style={icon1} />
+            </div>
+
+
             <div className="categories-name">
                 <ul className="options">
                     <Link to="/Wedding" className="option-list"><li>Wedding</li></Link>
@@ -88,9 +101,12 @@ export default function Home() {
                     <Link to="/SaveTheDate" className="option-list"><li>Save The Date</li></Link>
                 </ul>
             </div>
-
-            <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
-
+            
+            <div className="midpic">
+                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
+                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
+            </div>
+            
             <div className="scroll-container">
                 <div id="img-container-2" className="img-container">
                     {home_list.map((item) => {
