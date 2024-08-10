@@ -8,6 +8,16 @@ const List = () => {
 
   const [list, setList] = useState([]);
 
+  const imgStyle = {
+    display: 'grid',
+    gridTemplateColumns: '0.5fr 2fr 1fr 0.5fr 0.5fr 0.5fr',
+    alignItems: 'center',
+    gap: '10px',
+    padding: '10px 13px',
+    border: '1px solid #cacaca',
+    fontSize: '15px'
+  };
+
   const fetchList = async () => {
     const response = await axios.get(`${url}/api/greeting/list`)
     if (response.data.success) {
@@ -39,7 +49,7 @@ const List = () => {
     <div className='list add flex-col'>
       <p>All Cards List</p>
       <div className='list-table'>
-        <div className="list-table-format title">
+        <div className="list-table-format title" style={imgStyle}>
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
@@ -49,7 +59,7 @@ const List = () => {
         </div>
         {list.map((item, index) => { if(item.category !== "Top" && item.category !== "Bottom"){
           return (
-            <div key={index} className='list-table-format'>
+            <div key={index} className='list-table-format' style = {imgStyle}>
               <img src={`${url}/images/` + item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
