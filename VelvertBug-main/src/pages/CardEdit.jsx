@@ -118,12 +118,15 @@ const imgStyle2 = {
         <div className="controls">
           {texts.map((textItem, index) => (
             <div key={index} className="text-controls">
+              <label htmlFor="">Add Text</label>
               <input
                 type="text"
                 placeholder={`Enter text ${index + 1}`}
                 value={textItem.text}
                 onChange={(e) => handleTextChange(index, e)}
               />
+              {/* <p></p> */}
+              <label htmlFor="">Font Size</label>
               <input
                 type="range"
                 min="10"
@@ -131,12 +134,16 @@ const imgStyle2 = {
                 value={textItem.fontSize}
                 onChange={(e) => handleFontSizeChange(index, e)}
               />
-              <span>{textItem.fontSize}px</span>
+              <span className='fontSizeSize'>{textItem.fontSize}px</span>
+              {/* <p></p> */}
+              <label htmlFor="">Font Style</label>
               <select value={textItem.fontStyle} onChange={(e) => handleFontStyleChange(index, e)}>
                 <option value="Chopin Script">Chopin Script</option>
                 <option value="Great Vibes">Great Vibes</option>
                 <option value="Cinzel">Cinzel</option>
               </select>
+              {/* <p></p> */}
+              <label htmlFor=""><i class="fa-solid fa-palette"></i> Colour</label>
               <input
                 type="color"
                 value={textItem.color}
@@ -145,7 +152,7 @@ const imgStyle2 = {
             </div>
           ))}
           <button onClick={handleAddTextbox}>Add Textbox</button>
-          <button onClick={handleDownload}>Download Image</button>
+          <button onClick={handleDownload}><i class="fa-solid fa-download"></i>Download Image</button>
         </div>
         
       </div>

@@ -20,7 +20,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 6vh;
+  width: 30vh;
+  padding: 3vh;
+  border: 2px rgb(245, 216, 216) solid;
+  border-radius: 25px;
   width: 30vh;
 }
 
@@ -55,4 +59,31 @@
 .pageHead{
   color: rgb(236, 59, 59);
   font-size: 40px;
+  margin-top: 5vh;
+  font-family: "Cinzel", serif !important;
+}
+
+label{
+  font-family: "Cinzel", serif;
+  font-size: 19px;
+  font-weight:700;
+  color: rgb(238, 66, 66);
+  margin: 2vh;
+  
+}
+
+.fontSizeSize{
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  color: rgb(238, 66, 66);
+}
+
+button{
+  margin: 1vh;
+  margin-top: 3vh;
+  border: 2px solid red !important;
+  border-radius: 20px !important;
+  background-color: rgb(232, 176, 176) !important;
+  font-family: "Cinzel", serif;
+  font-size: 15px;
 }
