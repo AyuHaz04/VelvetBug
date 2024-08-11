@@ -21,8 +21,8 @@ export default function Home() {
     };
 
     const imgStyle2 = {
-        width: '25vh',
-        height: '30vh',
+        width: '20vh',
+        height: '25vh',
         borderRadius: '10px',
         margin: '1vh',
     };
@@ -75,9 +75,7 @@ export default function Home() {
             </div>
 
             <div className="para" id="para1">
-                <p className='Quote'>
-                    " With each invite, we weave moments into memories "
-                </p>
+                <img src="./images/quote.png" alt="" className='quote'/>
             </div>
 
             
@@ -120,7 +118,7 @@ export default function Home() {
                 <FaArrowRight className="scroll-arrow" onClick={() => scrollRight('img-container-2')} />
             </div>
 
-            <h1 className='review'>Reviews</h1>
+            <h2 className='review'>Reviews</h2>
 
             <div className="bottom-images">
                 <div className="review-box">

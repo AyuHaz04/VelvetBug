@@ -60,6 +60,8 @@
 h2{
   text-align: center;
   color: rgb(233, 148, 148);
+  font-family: "Cinzel", serif;
+  font-weight: 800;
 }
  h1{
   color: rgb(233, 148, 148);
@@ -120,9 +122,9 @@ h2{
   flex-shrink: 0;
 }
 
-.para {
+/* .para {
   margin: 2vh 0;
-}
+} */
 
 .options {
   list-style-type: none;
@@ -146,14 +148,16 @@ h2{
 }
 
 .review{
-  color: rgb(236, 59, 59);
+  color: rgb(233, 148, 148);
+  font-weight: 500;
+  font-size: 50px;
 }
 
 .icon-container {
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
 }
 
 .quote-img {
@@ -177,7 +181,7 @@ h2{
   height: 50vh;
   margin-right: 2vh;
   padding: 5vh;
-  border: 2px solid rgb(240, 163, 163);
+  border: 2px solid rgb(242, 207, 207);
   border-radius: 25px;
 }
 
@@ -188,7 +192,7 @@ h2{
   padding: 8px;
   border: none;
   border-radius: 15px !important;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0 !important;
   cursor: pointer;
   text-align: left;
 }
@@ -206,4 +210,14 @@ h2{
 
 .filter-btn{
   border: solid rgb(244, 191, 191) 1px !important;
+}
+
+.quote{
+  width: 150vh;
+  height: 50vh;
+}
+
+.pageHead{
+  color:  rgb(233, 148, 148) !important;
+  margin-left: 15vh;
 }

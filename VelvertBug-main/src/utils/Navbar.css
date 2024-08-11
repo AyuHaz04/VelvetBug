@@ -1,11 +1,12 @@
 .Header{
-    background-color:rgb(233, 148, 148);
+    background-color:white;
     display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2vh 2vh;
   position: relative; 
-  height: 12vh;
+  height: 8vh;
+  
   /* background-color: #f8f9fa; */
 }
 
@@ -20,10 +21,11 @@
 }
 
 .Icon {
-  font-size: 40px;
-  color:  rgb(245, 226, 226);
+  font-size: 30px;
+  color:   rgb(233, 148, 148);
   margin-right: 30px;
   cursor: pointer;
+  margin-top: 2vh;
 }
 
 .DropdownMenu {
@@ -57,18 +59,34 @@
     font-size: 75px;
     text-align: center;
     font-style: normal;
-    color: rgb(245, 226, 226)
+    color: rgb(233, 148, 148);
   }
 
   .AboutMeLink{
-    color: rgb(245, 226, 226);
+    color:  rgb(233, 148, 148);
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
     margin-right: 10vh;
     font-family: "Cinzel", serif;
+    margin-top: 2vh;
   }
 
 h1{
   padding: 1vh 1vh;
+}
+
+.HeadText{
+  font-size: 40px;
+  margin-top: 3vh;
+}
+
+.logo{
+  width: 10vh;
+  height: 10vh;
+  margin-top: 2vh;
+}
+
+.header-line{
+  border: 1px brown solid;
 }

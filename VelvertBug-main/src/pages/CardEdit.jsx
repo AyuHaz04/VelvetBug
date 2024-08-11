@@ -92,7 +92,7 @@ const CardEdit = () => {
 
   return (
     <div className="App-main">
-      <p className='pageHead'>Customize your card</p>
+      <p className='CustomizeHead'>Customize your card</p>
       <div className="container">
         <div className="image-section left-image">
           <img

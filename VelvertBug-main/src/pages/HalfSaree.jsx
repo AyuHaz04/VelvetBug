@@ -12,34 +12,38 @@ export default function HalfSaree() {
   };
 
   const imgStyle2 = {
-    width: "30rem",
-    height: "50rem",
+    width: "25rem",
+    height: "37rem",
     borderRadius: "10px",
     margin: "10px",
   };
   return (
     <>
       <h2 className="pageHead">HalfSaree Ceremony Cards</h2>
-      <div className="card-display-list">
-        {greeting_list.map((item) => {
-          if (item.category == "HalfSaree") {
-            return (
-              <div>
-                <div className="image">
-                  <Link to="/CardEdit">
-                    <img
-                      onClick={() => updateImage(item.image, item.image1)}
-                      src={url + "/images/" + item.image}
-                      alt=""
-                      style={imgStyle2}
-                    />
-                  </Link>
+      <div className="filter-container">
+             
+                <div className="filters">
+                <p><i class="fa-solid fa-filter"></i> Filter</p>
+                    <button className='filter-btn' onClick={() => setFilter('299-399')}>299-399</button>
+                    <button className='filter-btn' onClick={() => setFilter('1999-4999')}>1999-4999</button>
+                    <button className='filter-btn'  onClick={() => setFilter('5999-9999')}>5999-9999</button>
+                    <button className='filter-btn' onClick={() => setFilter('')}>Clear Filters</button>
                 </div>
-              </div>
-            );
-          }
-        })}
-      </div>
+
+                <div className="card-display-list">
+                    {greeting_list.filter(item => item.category === "HalfSaree" && filterByPrice(item)).map((item) => {
+                        return (
+                            <div key={item.image}>
+                                <div className="image">
+                                    <Link to="/CardEdit">
+                                        <img onClick={() => updateImage(item.image, item.image1)} src={url + "/images/" + item.image} alt="" style={imgStyle2} />
+                                    </Link>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
     </>
   );
 }

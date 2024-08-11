@@ -27,9 +27,10 @@ export default function Navbar() {
   return (
     <>
       <div className="Header" ref={menuRef}>
-        <h1>TheVelvetbug</h1>
+        <img src="./images/logo.png" alt="" className="logo"/>
+        <h1 className="HeadText">TheVelvetbug</h1>
         <div className="Navbar">
-          <a href="#about-me" className="AboutMeLink">About Me</a>
+          <a href="#about-me" className="AboutMeLink">About</a>
           <div className="CategoryMenu" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faList} className="Icon" />
           </div>
@@ -42,6 +43,7 @@ export default function Navbar() {
           </div>
         )}
       </div>
+      <hr className="header-line"/>
     </>
   );
 }

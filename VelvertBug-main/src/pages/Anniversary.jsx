@@ -14,7 +14,7 @@ export default function Anniversary() {
 
     const imgStyle2 = {
         width: '25rem',
-        height: '45rem',
+        height: '37rem',
         borderRadius: '10px',
         margin: '10px',
     };

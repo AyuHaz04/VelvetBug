@@ -56,17 +56,26 @@
 }
 
 .pageHead{
-  color: rgb(236, 59, 59);
+  color:  rgb(233, 148, 148);
   font-size: 40px;
   margin-top: 5vh;
   font-family: "Cinzel", serif !important;
+}
+
+.CustomizeHead{
+
+    color:  rgb(233, 148, 148) !important;
+    font-size: 40px;
+    margin-top: 5vh;
+    font-weight: 300;
+    font-family: "Cinzel", serif !important;
 }
 
 label{
   font-family: "Cinzel", serif;
   font-size: 19px;
   font-weight:700;
-  color: rgb(238, 66, 66);
+  color:  rgb(233, 148, 148);
   margin: 2vh;
   
 }
