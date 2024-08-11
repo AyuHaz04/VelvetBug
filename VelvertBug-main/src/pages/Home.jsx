@@ -81,7 +81,7 @@ export default function Home() {
             </div>
 
             
-            <div class="container">
+            <div class="icon-container">
                   <img src="./images/imgbelowquote.png" className="quote-img" style={icon1} />
             </div>
 
