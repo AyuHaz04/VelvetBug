@@ -100,10 +100,7 @@ export default function Home() {
                 </ul>
             </div>
             
-            <div className="midpic">
-                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
-                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
-            </div>
+           
             
             <div className="scroll-container">
                 <div id="img-container-2" className="img-container">
@@ -118,7 +115,12 @@ export default function Home() {
                 <FaArrowRight className="scroll-arrow" onClick={() => scrollRight('img-container-2')} />
             </div>
 
-            <h2 className='review'>Reviews</h2>
+            <div className="midpic">
+                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
+                <h1   className='review'>Reviews</h1>
+                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
+            </div>
+           
 
             <div className="bottom-images">
                 <div className="review-box">

@@ -95,9 +95,14 @@ label{
 button{
   margin: 1vh;
   margin-top: 3vh;
-  border: 2px solid red !important;
+  border: 2px solid rgb(233, 148, 148) !important;
   border-radius: 20px !important;
-  background-color: rgb(232, 176, 176) !important;
+  background-color:white !important;
   font-family: "Cinzel", serif;
   font-size: 15px;
+}
+
+.button:hover{
+  background-color: rgb(233, 148, 148) !important;
+  color: whitesmoke !important;
 }

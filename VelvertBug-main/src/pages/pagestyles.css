@@ -14,17 +14,17 @@
 
   margin-left: 1em;
   list-style-type: none;
-  padding: 25px;
+  padding: 15px;
 }
 
 .option-list{
-  padding: 10px;
-  border: 2px solid red;
-  border-radius: 50px;
-  background-color: rgba(234, 101, 101, 0.341);
-  margin: 15px;
+  padding: 5px;
+  border: 2px solid rgb(233, 148, 148);
+  border-radius: 30px;
+  background-color:white;
+  margin: 10px;
   text-decoration: none;
-  color:red;
+  color:rgb(233, 148, 148);
   font-size: 40px;
   text-align: center;
 }
@@ -42,6 +42,11 @@
   margin-left: 10vh;
   margin-right: 10vh;
   box-shadow: 5px;
+}
+
+.option-list:hover{
+  background-color: rgb(233, 148, 148);
+  color: white;
 }
 
 .image{
@@ -133,6 +138,7 @@ h2{
 
 .option-list {
   text-decoration: none;
+  color: rgb(233, 148, 148);
 }
 
 .option-list li {
@@ -150,7 +156,8 @@ h2{
 .review{
   color: rgb(233, 148, 148);
   font-weight: 500;
-  font-size: 50px;
+  font-size: 80px;
+  margin-top: 10vh;
 }
 
 .icon-container {
@@ -172,6 +179,7 @@ h2{
 }
 
 .filter-container{
+  margin-top: 5px;
   margin-left: 5vh;
   display: flex;
 }
@@ -180,6 +188,7 @@ h2{
   width: 40vh;
   height: 50vh;
   margin-right: 2vh;
+  margin-top: 4vh;
   padding: 5vh;
   border: 2px solid rgb(242, 207, 207);
   border-radius: 25px;
@@ -198,8 +207,8 @@ h2{
 }
 
 .filters button:hover {
-  background-color: #ec3c3c !important;
-  color: rgb(232, 176, 176) !important;
+  background-color: rgb(233, 148, 148) !important;
+  color: whitesmoke !important;
 }
 
 .card-display-list {
@@ -209,7 +218,7 @@ h2{
 }
 
 .filter-btn{
-  border: solid rgb(244, 191, 191) 1px !important;
+  border: solid rgb(233, 148, 148) 1px !important;
 }
 
 .quote{
@@ -220,4 +229,8 @@ h2{
 .pageHead{
   color:  rgb(233, 148, 148) !important;
   margin-left: 15vh;
+}
+
+.filters p{
+  color: rgb(239, 102, 102) !important;
 }

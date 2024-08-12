@@ -70,15 +70,20 @@
     margin-right: 10vh;
     font-family: "Cinzel", serif;
     margin-top: 2vh;
+    /* border: 2px solid rgb(233, 148, 148) ;
+    padding: 8px 13px;
+    border-radius: 30px; */
   }
 
 h1{
-  padding: 1vh 1vh;
+  /* padding: 1vh 1vh; */
 }
 
 .HeadText{
   font-size: 40px;
-  margin-top: 3vh;
+  
+  
+  margin-top: 2vh;
 }
 
 .logo{

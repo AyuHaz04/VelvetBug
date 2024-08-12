@@ -23,7 +23,7 @@ export default function Lovestory() {
       <div className="filter-container">
              
                 <div className="filters">
-                <p><i class="fa-solid fa-filter"></i> Filter</p>
+                <p ><i class="fa-solid fa-filter"></i> Filter</p>
                     <button className='filter-btn' onClick={() => setFilter('299-399')}>299-399</button>
                     <button className='filter-btn' onClick={() => setFilter('1999-4999')}>1999-4999</button>
                     <button className='filter-btn'  onClick={() => setFilter('5999-9999')}>5999-9999</button>
