@@ -30,6 +30,7 @@ export default function Navbar() {
         <img src="./images/logo.png" alt="" className="logo"/>
         <h1 className="HeadText">TheVelvetbug</h1>
         <div className="Navbar">
+        <a href="#about-me" className="AboutMeLink">Customize</a>
           <a href="#about-me" className="AboutMeLink">About</a>
           <div className="CategoryMenu" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faList} className="Icon" />
@@ -37,9 +38,17 @@ export default function Navbar() {
         </div>
         {isOpen && (
           <div className="DropdownMenu">
-            <a href="#category1">Category 1</a>
-            <a href="#category2">Category 2</a>
-            <a href="#category3">Category 3</a>
+            <a href="#category1">Wedding</a>
+            <a href="#category2">Anniversary</a>
+            <a href="#category3">BabyName</a>
+             <a href="">BabyShower</a>
+             <a href="">Birthday</a>
+             <a href="">Dhoti</a>
+             <a href="">HalfSaree</a>
+             <a href="">HouseWarming</a>
+             <a href="">LoveStory</a>
+             <a href="">Roka</a>
+             <a href="">SaveThedate</a>
           </div>
         )}
       </div>

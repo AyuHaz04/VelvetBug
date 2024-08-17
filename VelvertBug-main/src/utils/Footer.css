@@ -46,10 +46,12 @@
 
 .f-socials i{
     padding: 8px;
+    opacity: 0.9;
 }
 
 .f-socials i:hover{
     transform: scale(1.3);
+    opacity: 1.1;
 }
 
 .fa-instagram{

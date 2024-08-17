@@ -15,13 +15,14 @@ import SaveTheDate from "./pages/SaveTheDate"
 import Wedding from "./pages/Wedding"
 import CardEdit from "./pages/CardEdit"
 import CardCustomize from "./pages/CardCustomize"
+import CardShow from "./pages/CardShow"
 
 function App() {
   
   return (
     <>
       <Navbar/>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/Anniversary" element={<Anniversary/>}></Route>
         <Route path="/BabyName" element={<BabyName/>}></Route>
@@ -36,8 +37,9 @@ function App() {
         <Route path="/Wedding" element={<Wedding/>}></Route>
         <Route path="/CardEdit" element={<CardEdit/>}></Route>
         <Route path="/CardCustomize" element={<CardCustomize/>}></Route>
-        
-      </Routes>
+        <CardShow></CardShow>
+      </Routes> */}
+      <CardShow></CardShow>
       <Footer/>
       
     </>

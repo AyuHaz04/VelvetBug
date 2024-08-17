@@ -1,0 +1,55 @@
+
+.CardShow{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.containerPreview{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-container{
+    margin-left: 40vh;
+}
+
+.details{
+    border: 2px solid rgb(233, 148, 148);
+    border-radius: 40px;
+    margin-right: 40vh;
+    width: 70vh;
+    height: 40vh;
+    margin-top: 10rem;
+}
+
+.details p{
+    color: rgb(233, 148, 148) !important;
+    /* padding: 5px; */
+    margin-top: 30px;
+}
+
+.container-2{
+    margin-top: 20px;
+}
+
+.container-2 p{
+    color: rgb(233, 148, 148) !important;
+    margin-top: 20px;
+}
+
+.container-2 button{
+    margin: 0 100vh;
+    font-size: 24px;
+    padding: 10px 20px;
+    color: rgb(233, 148, 148) ;
+    border: rgb(233, 148, 148);
+}
+
+.container-2 button:hover{
+    background-color:rgb(233, 148, 148) !important;
+    color: white;
+}
+
+.imgplace{
+    background-image: url("./images/Inserted_Image.png");
+}
