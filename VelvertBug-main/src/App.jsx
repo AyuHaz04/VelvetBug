@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/Anniversary" element={<Anniversary/>}></Route>
         <Route path="/BabyName" element={<BabyName/>}></Route>
@@ -38,7 +38,7 @@ function App() {
         <Route path="/CardEdit" element={<CardEdit/>}></Route>
         <Route path="/CardCustomize" element={<CardCustomize/>}></Route>
         <CardShow></CardShow>
-      </Routes> */}
+      </Routes>
       <CardShow></CardShow>
       <Footer/>
       

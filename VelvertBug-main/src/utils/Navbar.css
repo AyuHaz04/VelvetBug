@@ -90,6 +90,8 @@ h1{
   width: 10vh;
   height: 10vh;
   margin-top: 2vh;
+  border: 2px solid rgb(233, 148, 148);
+  border-radius: 50px;
 }
 
 .header-line{
