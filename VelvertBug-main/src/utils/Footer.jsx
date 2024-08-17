@@ -7,7 +7,7 @@ export default function Footer(){
             <div className="column">
                 <div className="hed">
                     <img src="./images/logo.png" alt="" className="logo-footer"/>
-                    <h1>TheVelvetbug</h1>
+                    <h2>TheVelvetbug</h2>
                 </div>
                 <div className="copyright">
                 <p><i class="fa-regular fa-copyright"></i>Copyright Trademak</p>
@@ -28,7 +28,7 @@ export default function Footer(){
             <p>Contact Info:</p>
             <div className="f-contact">
                 <p><i class="fa-brands fa-whatsapp fa-2x"></i> Whatsapp No. : +91 6290 053 389</p>
-                <p><i class="fa-solid fa-envelope fa-2x"></i> Email :thevelvetbug29@gmail.com</p>
+                <p><i class="fa-solid fa-envelope fa-2x"></i> Email : thevelvetbug29@gmail.com</p>
             </div>
             </div>
         </div>
