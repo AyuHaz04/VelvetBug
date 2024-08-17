@@ -15,7 +15,7 @@ import SaveTheDate from "./pages/SaveTheDate"
 import Wedding from "./pages/Wedding"
 import CardEdit from "./pages/CardEdit"
 import CardCustomize from "./pages/CardCustomize"
-import CardShow from "./pages/CardShow"
+// import CardShow from "./pages/CardShow"
 
 function App() {
   
@@ -37,9 +37,9 @@ function App() {
         <Route path="/Wedding" element={<Wedding/>}></Route>
         <Route path="/CardEdit" element={<CardEdit/>}></Route>
         <Route path="/CardCustomize" element={<CardCustomize/>}></Route>
-        <CardShow></CardShow>
+        
       </Routes>
-      <CardShow></CardShow>
+      {/* <CardShow></CardShow> */}
       <Footer/>
       
     </>
