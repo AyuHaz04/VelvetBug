@@ -1,26 +1,98 @@
 .f-info{
+    position: relative;
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-between;
     width:100%;
+    height: 200px;
     position:relative;
     bottom: 0;
+    background-color: rgb(233, 148, 148);
     /* background-color: whitesmoke; */
 }
+
+.hed{
+    display: flex;
+    flex-direction: row;
+}
+
+.hed h1{
+    color: white;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    /* text-align: left; */
+}
+
+.left-side h1{
+    color: white !important;
+}
+
 .f-socials{
     display: flex;
+    flex-direction: row;
     justify-content:space-around ;
 }
 .f-contact{
     display: flex;
+    flex-direction: column;
     justify-content:space-evenly ;
+    
 }
+
+.f-socials i{
+    padding: 8px;
+}
+
+.f-socials i:hover{
+    transform: scale(1.3);
+}
+
 .fa-instagram{
-    color: #da1d98;
+    color: white;
 }
 
 .fa-youtube{
-    color: red;
+    color: white;
 }
 
 p{
     text-align: center;
-    color: rgb(236, 59, 59) !important;
+    color: white !important;
+}
+
+.fa-facebook{
+    color: white;
+}
+
+.logo-footer{
+    width: 100px;
+    height: 100px;
+    margin-top: 3vh;
+    margin-left: 1vh;
+}
+
+.copyright{
+    display: flex;
+    justify-content: left;
+    margin-top: 50px;
+}
+
+.copyright p{
+    font-size: 12px;
+}
+
+.socials{
+  margin-top: 30px;
+}
+
+.contact{
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.contact p{
+    font-size: 15px ;
 }

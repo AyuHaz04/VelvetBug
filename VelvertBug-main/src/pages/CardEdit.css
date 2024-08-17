@@ -7,36 +7,28 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  margin-bottom: 50px;
 }
 
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 1vh;
+  margin: 0px 20px;
 }
 
-.controls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 5vh;
-  padding: 3vh;
-  border: 2px rgb(245, 216, 216) solid;
-  border-radius: 25px;
-  width: 70vh;
-}
+
 
 .image-container {
   position: relative;
   display: inline-block;
-  width: 30rem; /* Ensure this matches the image width */
-  height: 50rem;
+  width: 30rem; 
+  height: 42rem;
 }
 
 .image-container img {
   width: 30rem;
-  height: 50rem;
+  height: 42rem;
 }
 
 .overlay-text {
@@ -53,6 +45,17 @@
 .draggable-text {
   display: inline-block;
   position: absolute;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5vh;
+  padding: 0 3vh;
+  border: 2px rgb(245, 216, 216) solid;
+  border-radius: 25px;
+  width: 100vh;
 }
 
 .pageHead{

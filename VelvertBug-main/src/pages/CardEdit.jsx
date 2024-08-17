@@ -85,7 +85,7 @@ const CardEdit = () => {
 
   const imgStyle2 = {
     width: '30rem' ,
-    height: '50rem',
+    height: '42rem',
     borderRadius: '10px',
     margin: '5vh',
   }
@@ -107,6 +107,7 @@ const CardEdit = () => {
             alt="Placeholder"
             crossOrigin="anonymous"
             onLoad={handleImageLoad}
+            
           />
           {texts.map((textItem, index) => (
             <Rnd
