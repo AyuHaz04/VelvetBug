@@ -48,7 +48,7 @@ export default function Dhoti() {
               return (
                 <div key={item.image}>
                   <div className="image">
-                    <Link to="/CardEdit">
+                    <Link to="/CardShow">
                       <img
                         onClick={() =>
                           updateImage(item.image, item.image1, item.description)
