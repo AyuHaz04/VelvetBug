@@ -1,7 +1,11 @@
 import './CardShow.css';
+import React, { useRef, useState, useContext } from 'react';
+import { StoreContext } from '../assets/Components/Context/StoreContext';
+import { Link } from "react-router-dom";
 
 
 export default function CardShow(){
+    const { url, img, desc} = useContext(StoreContext);
     const imgStyle3 = {
         width: '80vh',
         height: 'auto',
@@ -9,11 +13,12 @@ export default function CardShow(){
         margin: '1vh',
     };
     return(
+        <>
         <div className='CardShow'>
             <h1>Preview</h1>
             <div className="containerPreview">
                 <div className="img-container">
-                    <img src="../images/d1.jpg" alt="" style={imgStyle3} className='imgplace'/>
+                    <img src={url + "/images/" + img} alt="" style={imgStyle3} className='imgplace'/>
                 </div>
                 <div className="details">
                     <p>Card Size- 5' x 7'</p>
@@ -23,9 +28,14 @@ export default function CardShow(){
                 </div>
             </div>
             <div className="container-2">
-            <button>Customize</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem aliquid officia sit dolor assumenda blanditiis, aliquam rerum nulla. Ea ipsa neque aperiam porro architecto ad eaque dignissimos nesciunt veniam!</p>
+            <Link to="/CardEdit"><button>Customize</button></Link>
+            {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem aliquid officia sit dolor assumenda blanditiis, aliquam rerum nulla. Ea ipsa neque aperiam porro architecto ad eaque dignissimos nesciunt veniam!</p> */}
+            <p>{desc}</p>
             </div>
         </div>
-    )
+        </>
+    );
 }
+
+// export default CardShow;
+

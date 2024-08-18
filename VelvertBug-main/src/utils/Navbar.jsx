@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +28,55 @@ export default function Navbar() {
   return (
     <>
       <div className="Header" ref={menuRef}>
-        <img src="./images/logo.png" alt="" className="logo"/>
-        <h1 className="HeadText">TheVelvetbug</h1>
+        <Link to="/"><img src="./images/logo.png" alt="" className="logo" /></Link>
+        <h1 className="HeadText"><Link to="/">TheVelvetbug</Link></h1>
         <div className="Navbar">
-        <a href="#about-me" className="AboutMeLink">Customize</a>
-          <a href="#about-me" className="AboutMeLink">About</a>
+          <Link to="/CardCustomize" className="AboutMeLink">
+            Customize
+          </Link>
+          <a href="#about-me" className="AboutMeLink">
+            About
+          </a>
           <div className="CategoryMenu" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faList} className="Icon" />
           </div>
         </div>
         {isOpen && (
           <div className="DropdownMenu">
-            <a href="#category1">Wedding</a>
+            <Link to="/Wedding" >
+              Wedding
+            </Link>
+            <Link to="/Anniversary" >
+              Anniversary
+            </Link>
+            <Link to="/BabyName" >
+              Baby Name
+            </Link>
+            <Link to="/BabyShower" >
+              Baby Shower
+            </Link>
+            <Link to="/Birthday" >
+              Birthday
+            </Link>
+            <Link to="/Dhoti" >
+              Dhoti
+            </Link>
+            <Link to="/HalfSaree" >
+              Half Saree
+            </Link>
+            <Link to="/Housewarming" >
+              Housewarming
+            </Link>
+            <Link to="/Lovestory" >
+              Love Story
+            </Link>
+            <Link to="/Roka" >
+              Roka
+            </Link>
+            <Link to="/SaveTheDate" >
+              Save The Date
+            </Link>
+            {/* <a href="#category1">Wedding</a>
             <a href="#category2">Anniversary</a>
             <a href="#category3">BabyName</a>
              <a href="">BabyShower</a>
@@ -48,11 +86,11 @@ export default function Navbar() {
              <a href="">HouseWarming</a>
              <a href="">LoveStory</a>
              <a href="">Roka</a>
-             <a href="">SaveThedate</a>
+             <a href="">SaveThedate</a> */}
           </div>
         )}
       </div>
-      <hr className="header-line"/>
+      <hr className="header-line" />
     </>
   );
 }

@@ -4,11 +4,13 @@ import { StoreContext } from "../assets/Components/Context/StoreContext";
 import { Link } from "react-router-dom";
 
 export default function Roka() {
-  const { greeting_list, url, setImage, setImage1 } = useContext(StoreContext);
+  const { greeting_list, url, setImage, setImage1, setDescription } =
+    useContext(StoreContext);
 
-  const updateImage = (image, image1) => {
+  const updateImage = (image, image1, description) => {
     setImage(image);
     setImage1(image1);
+    setDescription(description);
   };
 
   const imgStyle2 = {
@@ -21,29 +23,47 @@ export default function Roka() {
     <>
       <h2 className="pageHead">Roka Ceremony cards</h2>
       <div className="filter-container">
-             
-             <div className="filters">
-             <p><i class="fa-solid fa-filter"></i> Filter</p>
-                 <button className='filter-btn' onClick={() => setFilter('299-399')}>299-399</button>
-                 <button className='filter-btn' onClick={() => setFilter('1999-4999')}>1999-4999</button>
-                 <button className='filter-btn'  onClick={() => setFilter('5999-9999')}>5999-9999</button>
-                 <button className='filter-btn' onClick={() => setFilter('')}>Clear Filters</button>
-             </div>
+        <div className="filters">
+          <p>
+            <i class="fa-solid fa-filter"></i> Filter
+          </p>
+          <button className="filter-btn" onClick={() => setFilter("299-399")}>
+            299-399
+          </button>
+          <button className="filter-btn" onClick={() => setFilter("1999-4999")}>
+            1999-4999
+          </button>
+          <button className="filter-btn" onClick={() => setFilter("5999-9999")}>
+            5999-9999
+          </button>
+          <button className="filter-btn" onClick={() => setFilter("")}>
+            Clear Filters
+          </button>
+        </div>
 
-             <div className="card-display-list">
-                 {greeting_list.filter(item => item.category === "Roka" && filterByPrice(item)).map((item) => {
-                     return (
-                         <div key={item.image}>
-                             <div className="image">
-                                 <Link to="/CardEdit">
-                                     <img onClick={() => updateImage(item.image, item.image1)} src={url + "/images/" + item.image} alt="" style={imgStyle2} />
-                                 </Link>
-                             </div>
-                         </div>
-                     );
-                 })}
-             </div>
-         </div>
+        <div className="card-display-list">
+          {greeting_list
+            .filter((item) => item.category === "Roka" && filterByPrice(item))
+            .map((item) => {
+              return (
+                <div key={item.image}>
+                  <div className="image">
+                    <Link to="/CardEdit">
+                      <img
+                        onClick={() =>
+                          updateImage(item.image, item.image1, item.description)
+                        }
+                        src={url + "/images/" + item.image}
+                        alt=""
+                        style={imgStyle2}
+                      />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
     </>
   );
 }

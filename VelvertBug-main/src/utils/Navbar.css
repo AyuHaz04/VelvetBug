@@ -10,6 +10,7 @@
   /* background-color: #f8f9fa; */
 }
 
+
 .Navbar {
   display: flex;
   align-items: center;
@@ -83,6 +84,13 @@ h1{
   font-size: 40px;
   
   
+  margin-top: 2vh;
+}
+
+.HeadText a {
+  color:  rgb(233, 148, 148);
+  text-decoration: none;
+  font-size: 40px;
   margin-top: 2vh;
 }
 
