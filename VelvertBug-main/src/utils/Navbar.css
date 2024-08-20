@@ -38,13 +38,19 @@
   z-index: 1;
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .DropdownMenu a {
   padding: 8px 12px;
   text-decoration: none;
   color: black;
+  padding: 20px 20px;
+  font-size: 18px;
+  margin-left: 12px;
+  color: rgb(233, 148, 148);
+  font-weight: 500;
 }
 
 .DropdownMenu a:hover {
@@ -74,10 +80,6 @@
     padding: 8px 13px;
     border-radius: 30px; */
   }
-
-h1{
-  /* padding: 1vh 1vh; */
-}
 
 .HeadText{
   font-size: 40px;

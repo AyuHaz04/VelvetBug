@@ -38,9 +38,9 @@ export default function Navbar() {
         </div>
         {isOpen && (
           <div className="DropdownMenu">
-            <a href="#category1">Wedding</a>
-            <a href="#category2">Anniversary</a>
-            <a href="#category3">BabyName</a>
+            <a href="">Wedding</a>
+            <a href="">Anniversary</a>
+            <a href="">BabyName</a>
              <a href="">BabyShower</a>
              <a href="">Birthday</a>
              <a href="">Dhoti</a>
