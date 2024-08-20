@@ -9,6 +9,7 @@ const StoreContextProvider = (props) => {
     const [home_list, setHomeList] = useState([]);
     const [img, setImg] = useState("");
     const [img1,setImg1] = useState("");
+    const [desc,setDesc] = useState("");
 
     const fetchGreetingList = async () => {
         const response = await axios.get(url + "/api/greeting/list");
@@ -26,6 +27,10 @@ const StoreContextProvider = (props) => {
         console.log(image1);
     }
 
+    const setDescription = (description) => {
+        setDesc(description);
+    }
+
     useEffect(() => {
         async function loadData() {
             await fetchGreetingList();
@@ -41,6 +46,8 @@ const StoreContextProvider = (props) => {
         home_list,
         setImage,
         setImage1,
+        setDescription,
+        desc,
         img,
         img1    
     };
