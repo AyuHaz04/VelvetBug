@@ -4,22 +4,29 @@
     flex-direction: column;
     margin: 10px;
 }
+
+h1{
+    text-align: center !important;
+}
+
 .containerPreview{
     display: flex;
     flex-direction: row;
+   
 }
 
-.img-container{
-    margin-left: 40vh;
+.img-container-preview{
+    margin-left: 35vh;
 }
 
 .details{
     border: 2px solid rgb(233, 148, 148);
     border-radius: 40px;
-    margin-right: 40vh;
-    width: 70vh;
+    margin-right: 20vh;
+    width: 40vh;
     height: 40vh;
     margin-top: 10rem;
+    margin-left: 10vh;
 }
 
 .details p{
@@ -43,6 +50,7 @@
     padding: 10px 20px;
     color: rgb(233, 148, 148) ;
     border: rgb(233, 148, 148);
+    border-radius: 40px !important;
 }
 
 .container-2 button:hover{

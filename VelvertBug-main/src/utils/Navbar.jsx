@@ -53,7 +53,7 @@ export default function Navbar() {
              <a href="">HouseWarming</a>
              <a href="">LoveStory</a>
              <a href="">Roka</a>
-             <a href="">SaveThedate</a> */}
+             <a href="">SaveThedate</a> 
           </div>
         )}
       </div>
