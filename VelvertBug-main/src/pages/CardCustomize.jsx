@@ -31,7 +31,7 @@ const CardCustomize = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <p>When’s the wedding?</p>
+        <p className="cardcustomize-text">When’s the wedding?</p>
         <input
           type="date"
           name="weddingDate"
@@ -40,7 +40,7 @@ const CardCustomize = () => {
         />
       </label>
       <label>
-        <p>How many functions do you want to include in the invite?</p>
+        <p className="cardcustomize-text">How many functions do you want to include in the invite?</p>
         <input
           type="number"
           name="numFunctions"
@@ -49,7 +49,7 @@ const CardCustomize = () => {
         />
       </label>
       <label>
-        <p>Do you want the invite to be motion (video) or still (pdf)?</p>
+        <p className="cardcustomize-text">Do you want the invite to be motion (video) or still (pdf)?</p>
         <select
           name="inviteType"
           value={formData.inviteType}
@@ -61,7 +61,7 @@ const CardCustomize = () => {
         </select>
       </label>
       <label>
-       <p> Do you want to include any love story in the invite? (as the commercials will vary)</p>
+       <p className="cardcustomize-text"> Do you want to include any love story in the invite? (as the commercials will vary)</p>
         <textarea
           name="loveStory"
           value={formData.loveStory}
@@ -69,7 +69,7 @@ const CardCustomize = () => {
         />
       </label>
       <label>
-        <p>Do you require a wedding logo/monogram?</p>
+        <p className="cardcustomize-text">Do you require a wedding logo/monogram?</p>
         <select
           name="weddingLogo"
           value={formData.weddingLogo}
@@ -81,7 +81,7 @@ const CardCustomize = () => {
         </select>
       </label>
       <label>
-        <p>Any additional requirements? If yes, please mention the same.</p>
+        <p className="cardcustomize-text">Any additional requirements? If yes, please mention the same.</p>
         <textarea
           name="additionalReq"
           value={formData.additionalReq}
@@ -89,7 +89,7 @@ const CardCustomize = () => {
         />
       </label>
       <label>
-        <p>Did you like any previous designs?</p>
+        <p className="cardcustomize-text">Did you like any previous designs?</p>
         <textarea
           name="likedDesigns"
           value={formData.likedDesigns}
@@ -97,7 +97,7 @@ const CardCustomize = () => {
         />
       </label>
       <label>
-       <p> If you have budget restrictions, please mention.</p>
+       <p className="cardcustomize-text"> If you have budget restrictions, please mention.</p>
         <textarea
           name="budgetRestriction"
           value={formData.budgetRestriction}

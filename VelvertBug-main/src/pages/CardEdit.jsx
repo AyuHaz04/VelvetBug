@@ -4,6 +4,7 @@ import html2canvas from 'html2canvas';
 import './CardEdit.css';
 import { StoreContext } from '../assets/Components/Context/StoreContext';
 
+
 const CardEdit = () => {
   const { url, img, img1 } = useContext(StoreContext);
   const [texts, setTexts] = useState([

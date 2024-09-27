@@ -22,7 +22,8 @@
     "react-dom": "^18.3.1",
     "react-draggable": "^4.4.6",
     "react-rnd": "^10.4.11",
-    "react-router-dom": "^6.24.0"
+    "react-router-dom": "^6.24.0",
+    "react-share": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

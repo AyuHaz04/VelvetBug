@@ -27,7 +27,7 @@
   button {
     padding: 10px;
     background-color: #007bff;
-    color: white;
+    /* color: white; */
     border: none;
     cursor: pointer;
   }
@@ -56,3 +56,7 @@
   button:hover{
     background-color: rgb(227, 114, 114);
   }
+
+.cardcustomize-text{
+  color: rgb(233, 148, 148) !important;
+}
