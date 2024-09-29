@@ -33,7 +33,7 @@ export default function CardShow(){
                 
             </div>
             <div className="container-2">
-            <h4><i>Description</i></h4>
+            <h3><i>Description</i></h3>
             <p>{desc}</p>
             </div>
         </div>

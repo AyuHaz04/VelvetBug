@@ -25,9 +25,10 @@ h1{
 }
 
 .Customize-way{
-    margin-left: 22vh;
+    margin-left: 10.5vh;
     background-color:rgb(233, 148, 148) !important;
     color: white;
+    width: 40vh;
 }
 
 .Customize-way:hover{
