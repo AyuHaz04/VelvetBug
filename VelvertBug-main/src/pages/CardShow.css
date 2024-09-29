@@ -20,42 +20,50 @@ h1{
 }
 
 .details{
+    display: flex;
+    flex-direction: column;
+}
+
+.Customize-way{
+    margin-left: 22vh;
+    background-color:rgb(233, 148, 148) !important;
+    color: white;
+}
+
+.Customize-way:hover{
+    opacity: 0.8;
+}
+
+.details-box{
     border: 2px solid rgb(233, 148, 148);
     border-radius: 40px;
     margin-right: 20vh;
     width: 40vh;
-    height: 40vh;
+    height: 30vh;
     margin-top: 10rem;
     margin-left: 10vh;
 }
 
-.details p{
+.details-box p{
     color: rgb(233, 148, 148) !important;
     /* padding: 5px; */
     margin-top: 30px;
+    text-align: start;
+    margin-left:1rem;
 }
 
 .container-2{
     margin-top: 20px;
+    color: rgb(233, 148, 148) !important;
+    text-align: start;
+    margin-left: 35vh;
 }
 
 .container-2 p{
     color: rgb(233, 148, 148) !important;
     margin-top: 20px;
-}
-
-.container-2 button{
-    margin: 0 100vh;
-    font-size: 24px;
-    padding: 10px 20px;
-    color: rgb(233, 148, 148) ;
-    border: rgb(233, 148, 148);
-    border-radius: 40px !important;
-}
-
-.container-2 button:hover{
-    background-color:rgb(233, 148, 148) !important;
-    color: white;
+    text-align: start;
+    /* margin-left: 35vh; */
 }
 
 .imgplace{

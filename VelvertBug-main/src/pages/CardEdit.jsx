@@ -1,9 +1,9 @@
 import React, { useRef, useState, useContext } from 'react';
 import { Rnd } from 'react-rnd';
 import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf'; // Import jsPDF
 import './CardEdit.css';
 import { StoreContext } from '../assets/Components/Context/StoreContext';
-
 
 const CardEdit = () => {
   const { url, img, img1 } = useContext(StoreContext);
@@ -12,7 +12,7 @@ const CardEdit = () => {
       text: '', 
       fontSize: 24, 
       fontStyle: 'Chopin Script', 
-      fontWeight: 400, // Default font weight
+      fontWeight: 400, 
       color: '#000000', 
       textSize: { width: 200, height: 50 }, 
       position: { x: 50, y: 50 } 
@@ -55,7 +55,7 @@ const CardEdit = () => {
       text: '', 
       fontSize: 24, 
       fontStyle: 'Chopin Script', 
-      fontWeight: 400, // Default font weight
+      fontWeight: 400, 
       color: '#000000', 
       textSize: { width: 200, height: 50 }, 
       position: { x: 50, y: 50 } 
@@ -68,18 +68,45 @@ const CardEdit = () => {
     setTexts(newTexts);
   };
 
-  const handleDownload = async () => {
-    const scale = 300 / 96; // Convert to 300 DPI from 96 DPI (default)
-    const canvas = await html2canvas(imageRef.current,{
+  // Function to download as image
+  const handleDownloadImage = async () => {
+    const scale = 300 / 96; // Convert to 300 DPI from 96 DPI
+
+    const canvas = await html2canvas(imageRef.current, {
       useCORS: true,
-      scale: scale, // Apply scaling for 300 DPI
-      width: imageRef.current.offsetWidth * scale, // Adjust canvas width
-      height: imageRef.current.offsetHeight * scale, // Adjust canvas height
+      // scale: scale, 
+      // width: imageRef.current.offsetWidth * scale, 
+      // height: imageRef.current.offsetHeight * scale, 
     });
+
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png',1.0);
-    link.download = 'image-with-text.png';
+    link.href = canvas.toDataURL('image/png', 1.0); // PNG for high quality
+    link.download = 'image-with-text-300dpi.png';
     link.click();
+  };
+
+  // Function to download as PDF
+  const handleDownloadPDF = async () => {
+    const scale = 300 / 96; // Convert to 300 DPI from 96 DPI
+
+    const canvas = await html2canvas(imageRef.current, {
+      useCORS: true,
+      scale: scale, 
+      width: imageRef.current.offsetWidth * scale, 
+      height: imageRef.current.offsetHeight * scale, 
+    });
+
+    const imgData = canvas.toDataURL('image/png', 1.0);
+
+    // Create a new jsPDF document in portrait mode (if the image fits better in landscape, you can change it)
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'px',
+      format: [canvas.width, canvas.height], // Set format to match the canvas dimensions
+    });
+
+    pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+    pdf.save('image-with-text.pdf'); // Save PDF with a name
   };
 
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -89,11 +116,11 @@ const CardEdit = () => {
   };
 
   const imgStyle2 = {
-    width: '30rem' ,
+    width: '30rem',
     height: '42rem',
     borderRadius: '10px',
     margin: '5vh',
-  }
+  };
 
   return (
     <div className="App-main">
@@ -112,7 +139,6 @@ const CardEdit = () => {
             alt="Placeholder"
             crossOrigin="anonymous"
             onLoad={handleImageLoad}
-            
           />
           {texts.map((textItem, index) => (
             <Rnd
@@ -138,11 +164,11 @@ const CardEdit = () => {
             >
               <div
                 className="overlay-text"
-                style={{ 
-                  fontSize: `${textItem.fontSize}px`, 
-                  fontFamily: textItem.fontStyle, 
-                  fontWeight: textItem.fontWeight, // Apply the font weight
-                  color: textItem.color 
+                style={{
+                  fontSize: `${textItem.fontSize}px`,
+                  fontFamily: textItem.fontStyle,
+                  fontWeight: textItem.fontWeight,
+                  color: textItem.color,
                 }}
               >
                 {textItem.text}
@@ -191,16 +217,15 @@ const CardEdit = () => {
                 value={textItem.color}
                 onChange={(e) => handleColorChange(index, e)}
               />
-              <button onClick={() => handleRemoveTextbox(index)}>Remove</button> {/* Remove button */}
+              <button onClick={() => handleRemoveTextbox(index)}>Remove</button>
             </div>
           ))}
           <button onClick={handleAddTextbox}>Add Textbox</button>
-          
         </div>
-        
       </div>
       <div className="below-customize">
-      <button onClick={handleDownload}><i className="fa-solid fa-download"></i>Download Image</button>
+        <button onClick={handleDownloadImage}><i className="fa-solid fa-download"></i>Download Image</button>
+        <button onClick={handleDownloadPDF}><i className="fa-solid fa-download"></i>Download PDF</button>
       </div>
     </div>
   );
