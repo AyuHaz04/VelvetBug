@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  /* color: white; */
   font-weight: bold;
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
 }

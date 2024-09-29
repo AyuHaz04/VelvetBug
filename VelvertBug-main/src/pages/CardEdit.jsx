@@ -69,11 +69,15 @@ const CardEdit = () => {
   };
 
   const handleDownload = async () => {
+    const scale = 300 / 96; // Convert to 300 DPI from 96 DPI (default)
     const canvas = await html2canvas(imageRef.current,{
       useCORS: true,
+      scale: scale, // Apply scaling for 300 DPI
+      width: imageRef.current.offsetWidth * scale, // Adjust canvas width
+      height: imageRef.current.offsetHeight * scale, // Adjust canvas height
     });
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
+    link.href = canvas.toDataURL('image/png',1.0);
     link.download = 'image-with-text.png';
     link.click();
   };
@@ -195,7 +199,7 @@ const CardEdit = () => {
         </div>
         
       </div>
-      <div className="belowcustomize">
+      <div className="below-customize">
       <button onClick={handleDownload}><i className="fa-solid fa-download"></i>Download Image</button>
       </div>
     </div>
