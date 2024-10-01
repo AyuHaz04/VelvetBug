@@ -59,6 +59,11 @@ export default function Home() {
         };
     }, []);
 
+     // Function to prevent right-click download
+     const preventDownload = (e) => {
+        e.preventDefault();
+      };
+
     return (
         <>
             <div className="scroll-container">
@@ -66,7 +71,7 @@ export default function Home() {
                     {home_list.map((item) => {
                         if (item.category === "Top") {
                             return (
-                                <img src={url + "/images/" + item.image} alt="" style={imgStyle3} key={item.image} />
+                                <img src={url + "/images/" + item.image} alt="" style={imgStyle3} key={item.image} onContextMenu={preventDownload} />
                             );
                         }
                     })}
@@ -107,7 +112,7 @@ export default function Home() {
                     {home_list.map((item) => {
                         if (item.category === "Bottom") {
                             return (
-                                <img src={url + "/images/" + item.image} alt="" style={imgStyle} key={item.image} />
+                                <img src={url + "/images/" + item.image} alt="" style={imgStyle} key={item.image} onContextMenu={preventDownload} />
                             );
                         }
                     })}
