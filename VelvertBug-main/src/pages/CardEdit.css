@@ -8,14 +8,16 @@
   justify-content: center;
   min-height: 100vh;
   margin-bottom: 50px;
+  /* margin-left:10px; */
 }
 
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0px 20px;
+  margin: 0px 10px;
 }
+
 
 
 
@@ -25,6 +27,9 @@
   width: 30rem; 
   height: 42rem;
 }
+
+/* width: 30rem; 
+height: 42rem; */
 
 .image-container img {
   width: 30rem;
@@ -109,4 +114,57 @@ button{
   background-color: rgb(233, 148, 148) !important;
   color: whitesmoke !important;
 }
+
+.image-section {
+  position: relative;
+  display: inline-block;
+}
+
+.overlayDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0); /* Fully transparent, only blocks interaction */
+  z-index: 2; /* Ensures the overlay is above the image */
+}
+
+.image-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none; /* Disables right-click or any interaction with the image */
+}
+
+/*    Next Section Here   */
+
+/* .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlayDiv1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0); 
+  z-index: 2; 
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+} */
+
+
+
+
+
 

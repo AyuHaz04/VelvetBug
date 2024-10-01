@@ -19,6 +19,11 @@ export default function Roka() {
     borderRadius: "10px",
     margin: "10px",
   };
+
+  // Function to prevent right-click download
+  const preventDownload = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <h2 className="pageHead">Roka Ceremony cards</h2>
@@ -47,7 +52,7 @@ export default function Roka() {
             .map((item) => {
               return (
                 <div key={item.image}>
-                  <div className="image">
+                  <div className="image" onContextMenu={preventDownload}>
                     <Link to="/CardShow">
                       <img
                         onClick={() =>

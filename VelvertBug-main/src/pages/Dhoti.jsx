@@ -19,6 +19,12 @@ export default function Dhoti() {
     borderRadius: "10px",
     margin: "10px",
   };
+
+   // Function to prevent right-click download
+   const preventDownload = (e) => {
+    e.preventDefault();
+  };
+  
   return (
     <>
       <h2 className="pageHead">Dhoti Ceremony Cards</h2>
@@ -47,7 +53,7 @@ export default function Dhoti() {
             .map((item) => {
               return (
                 <div key={item.image}>
-                  <div className="image">
+                  <div className="image" onContextMenu={preventDownload}>
                     <Link to="/CardShow">
                       <img
                         onClick={() =>

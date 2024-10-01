@@ -19,6 +19,11 @@ export default function Lovestory() {
     borderRadius: "10px",
     margin: "10px",
   };
+
+  // Function to prevent right-click download
+  const preventDownload = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <h2 className="pageHead">LoveStory Cards</h2>
@@ -49,7 +54,7 @@ export default function Lovestory() {
             .map((item) => {
               return (
                 <div key={item.image}>
-                  <div className="image">
+                  <div className="image" onContextMenu={preventDownload}>
                     <Link to="/CardShow">
                       <img
                         onClick={() =>

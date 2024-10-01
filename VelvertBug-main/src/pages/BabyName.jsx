@@ -21,6 +21,11 @@ export default function BabyName() {
     margin: "10px",
   };
 
+   // Function to prevent right-click download
+   const preventDownload = (e) => {
+    e.preventDefault();
+  };
+
   const filterByPrice = (item) => {
     if (!filter) return true; // No filter selected
     const price = item.price; // Assuming 'price' is a field in the item object
@@ -52,7 +57,7 @@ export default function BabyName() {
             )
             .map((item) => (
               <div key={item.image}>
-                <div className="image">
+                <div className="image" onContextMenu={preventDownload}>
                   <Link to="/CardShow">
                     <img
                       onClick={() =>

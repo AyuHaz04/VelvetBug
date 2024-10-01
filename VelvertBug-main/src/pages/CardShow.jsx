@@ -20,7 +20,8 @@ export default function CardShow(){
             
             <div className="containerPreview">
                 <div className="img-container-preview">
-                    <img src={url + "/images/" + img} alt="" style={imgStyle3} className='imgplace'/>
+                    <div class="overlayDiv"></div>
+                    <img src={url + "/images/" + img} alt="" style={imgStyle3} className='imgplace' onContextMenu="return false;"/>
                 </div>
                 <div className="details">
                     <div className="details-box">

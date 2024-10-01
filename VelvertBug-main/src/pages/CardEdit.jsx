@@ -1,24 +1,29 @@
-import React, { useRef, useState, useContext } from 'react';
-import { Rnd } from 'react-rnd';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf'; // Import jsPDF
-import './CardEdit.css';
-import { StoreContext } from '../assets/Components/Context/StoreContext';
+import React, { useRef, useState, useContext } from "react";
+import { Rnd } from "react-rnd";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf"; // Import jsPDF
+import "./CardEdit.css";
+import { StoreContext } from "../assets/Components/Context/StoreContext";
 
 const CardEdit = () => {
   const { url, img, img1 } = useContext(StoreContext);
   const [texts, setTexts] = useState([
-    { 
-      text: '', 
-      fontSize: 24, 
-      fontStyle: 'Chopin Script', 
-      fontWeight: 400, 
-      color: '#000000', 
-      textSize: { width: 200, height: 50 }, 
-      position: { x: 50, y: 50 } 
-    }
+    {
+      text: "",
+      fontSize: 24,
+      fontStyle: "Chopin Script",
+      fontWeight: 400,
+      color: "#000000",
+      textSize: { width: 200, height: 50 },
+      position: { x: 50, y: 50 },
+    },
   ]);
   const imageRef = useRef(null);
+
+  // Function to prevent right-click download
+  const preventDownload = (e) => {
+    e.preventDefault();
+  };
 
   const handleTextChange = (index, e) => {
     const newTexts = [...texts];
@@ -51,14 +56,14 @@ const CardEdit = () => {
   };
 
   const handleAddTextbox = () => {
-    const newText = { 
-      text: '', 
-      fontSize: 24, 
-      fontStyle: 'Chopin Script', 
-      fontWeight: 400, 
-      color: '#000000', 
-      textSize: { width: 200, height: 50 }, 
-      position: { x: 50, y: 50 } 
+    const newText = {
+      text: "",
+      fontSize: 24,
+      fontStyle: "Chopin Script",
+      fontWeight: 400,
+      color: "#000000",
+      textSize: { width: 200, height: 50 },
+      position: { x: 50, y: 50 },
     };
     setTexts([...texts, newText]);
   };
@@ -74,14 +79,14 @@ const CardEdit = () => {
 
     const canvas = await html2canvas(imageRef.current, {
       useCORS: true,
-      // scale: scale, 
-      // width: imageRef.current.offsetWidth * scale, 
-      // height: imageRef.current.offsetHeight * scale, 
+      // scale: scale,
+      // width: imageRef.current.offsetWidth * scale,
+      // height: imageRef.current.offsetHeight * scale,
     });
 
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png', 1.0); // PNG for high quality
-    link.download = 'image-with-text-300dpi.png';
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png", 1.0); // PNG for high quality
+    link.download = "image-with-text-300dpi.png";
     link.click();
   };
 
@@ -91,22 +96,22 @@ const CardEdit = () => {
 
     const canvas = await html2canvas(imageRef.current, {
       useCORS: true,
-      scale: scale, 
-      width: imageRef.current.offsetWidth * scale, 
-      height: imageRef.current.offsetHeight * scale, 
+      scale: scale,
+      width: imageRef.current.offsetWidth * scale,
+      height: imageRef.current.offsetHeight * scale,
     });
 
-    const imgData = canvas.toDataURL('image/png', 1.0);
+    const imgData = canvas.toDataURL("image/png", 1.0);
 
     // Create a new jsPDF document in portrait mode (if the image fits better in landscape, you can change it)
     const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'px',
+      orientation: "portrait",
+      unit: "px",
       format: [canvas.width, canvas.height], // Set format to match the canvas dimensions
     });
 
-    pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-    pdf.save('image-with-text.pdf'); // Save PDF with a name
+    pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+    pdf.save("image-with-text.pdf"); // Save PDF with a name
   };
 
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -116,24 +121,30 @@ const CardEdit = () => {
   };
 
   const imgStyle2 = {
-    width: '30rem',
-    height: '42rem',
-    borderRadius: '10px',
-    margin: '5vh',
+    width: "30rem",
+    height: "42rem",
+    borderRadius: "10px",
+    margin: "5vh",
   };
 
   return (
     <div className="App-main">
-      <p className='CustomizeHead'>Customize your card</p>
+      <p className="CustomizeHead">Customize your card</p>
       <div className="container">
         <div className="image-section left-image">
+          <div class="overlayDiv"></div>
           <img
             src={url + "/images/" + img}
             alt="Additional"
             style={imgStyle2}
           />
         </div>
-        <div className="image-container" ref={imageRef}>
+        <div
+          className="image-container"
+          ref={imageRef}
+          onContextMenu={preventDownload}
+        >
+          <div class="overlayDiv1"></div>
           <img
             src={url + "/images/" + img1}
             alt="Placeholder"
@@ -144,7 +155,10 @@ const CardEdit = () => {
             <Rnd
               key={index}
               className="draggable-text"
-              size={{ width: textItem.textSize.width, height: textItem.textSize.height }}
+              size={{
+                width: textItem.textSize.width,
+                height: textItem.textSize.height,
+              }}
               position={{ x: textItem.position.x, y: textItem.position.y }}
               bounds="parent"
               onDragStop={(e, d) => {
@@ -194,7 +208,7 @@ const CardEdit = () => {
                 value={textItem.fontSize}
                 onChange={(e) => handleFontSizeChange(index, e)}
               />
-              <span className='fontSizeSize'>{textItem.fontSize}px</span>
+              <span className="fontSizeSize">{textItem.fontSize}px</span>
               <label htmlFor="">Font Weight</label>
               <input
                 type="range"
@@ -204,14 +218,20 @@ const CardEdit = () => {
                 value={textItem.fontWeight}
                 onChange={(e) => handleFontWeightChange(index, e)}
               />
-              <span className='fontWeight'>{textItem.fontWeight} </span><br />
+              <span className="fontWeight">{textItem.fontWeight} </span>
+              <br />
               <label htmlFor="">Font Style</label>
-              <select value={textItem.fontStyle} onChange={(e) => handleFontStyleChange(index, e)}>
+              <select
+                value={textItem.fontStyle}
+                onChange={(e) => handleFontStyleChange(index, e)}
+              >
                 <option value="Chopin Script">Chopin Script</option>
                 <option value="Great Vibes">Great Vibes</option>
                 <option value="Cinzel">Cinzel</option>
               </select>
-              <label htmlFor=""><i className="fa-solid fa-palette"></i> Colour</label>
+              <label htmlFor="">
+                <i className="fa-solid fa-palette"></i> Colour
+              </label>
               <input
                 type="color"
                 value={textItem.color}
@@ -224,8 +244,12 @@ const CardEdit = () => {
         </div>
       </div>
       <div className="below-customize">
-        <button onClick={handleDownloadImage}><i className="fa-solid fa-download"></i>Download Image</button>
-        <button onClick={handleDownloadPDF}><i className="fa-solid fa-download"></i>Download PDF</button>
+        <button onClick={handleDownloadImage}>
+          <i className="fa-solid fa-download"></i>Download Image
+        </button>
+        <button onClick={handleDownloadPDF}>
+          <i className="fa-solid fa-download"></i>Download PDF
+        </button>
       </div>
     </div>
   );
