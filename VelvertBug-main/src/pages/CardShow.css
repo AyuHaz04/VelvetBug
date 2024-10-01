@@ -12,7 +12,7 @@ h1{
 .containerPreview{
     display: flex;
     flex-direction: row;
-   
+   color: rgb(233, 148, 148);
 }
 
 .img-container-preview{
@@ -24,7 +24,7 @@ h1{
     flex-direction: column;
 }
 
-.Customize-way{
+.Customize-way {
     margin-left: 10.5vh;
     background-color:rgb(233, 148, 148) !important;
     color: white;
@@ -69,4 +69,17 @@ h1{
 
 .imgplace{
     background-image: url("./images/Inserted_Image.png");
+}
+
+.share-buttons-icons {
+    margin-left: 10vh;
+}
+
+.share-buttons-icons button{
+    border: none !important;
+}
+
+
+.share-buttons-icons p{
+    color: rgb(233, 148, 148) !important;
 }

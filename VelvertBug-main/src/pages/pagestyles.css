@@ -231,3 +231,7 @@ h2{
 .filters p{
   color: rgb(239, 102, 102) !important;
 }
+
+.review-box button{
+  color: rgb(233, 148, 148) !important;
+}
