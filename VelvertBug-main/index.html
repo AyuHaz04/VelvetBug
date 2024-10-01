@@ -58,6 +58,12 @@
       defer
     ></script>
     <script>
+      var noPrint = true;
+      var noCopy = true;
+      var noScreenshot = true;
+      var autoBlur = true;
+
+      // Prevent copying and context menu
       if (noCopy) {
         document.body.oncopy = function () {
           return false;
@@ -68,27 +74,30 @@
         document.body.onselectstart = document.body.ondrag = function () {
           return false;
         };
-        document.onkeydown = function () {
+
+        document.onkeydown = function (event) {
+          // Prevent Ctrl+S
           if (
             (event.ctrlKey == true || event.metaKey == true) &&
             event.keyCode == 83
           ) {
             event.preventDefault();
           }
-          if (
-            (event.ctrlKey == true || event.metaKey == true) &&
-            event.code == 83
-          ) {
+
+          // Prevent Print Screen key press
+          if (event.key === "PrintScreen" || event.code === "PrintScreen") {
             event.preventDefault();
+            toBlur(); // Blur immediately when Print Screen is pressed
+            alert("Screenshot action detected!"); // Optional alert for debugging
           }
         };
       }
 
+      // Prevent printing
       if (noPrint) {
         var c = document.createElement("span");
         c.style.display = "none";
-        c.style.postion = "absolute";
-        c.style.background = "#000";
+        c.style.position = "absolute";
         var first = document.body.firstChild;
         var wraphtml = document.body.insertBefore(c, first);
         c.setAttribute("width", document.body.scrollWidth);
@@ -101,6 +110,7 @@
         document.head.appendChild(cssNode3);
       }
 
+      // Prevent text selection
       var cssNode2 = document.createElement("style");
       cssNode2.type = "text/css";
       cssNode2.media = "screen";
@@ -110,46 +120,70 @@
       document.body.style.cssText =
         "-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;";
 
+      // Function to blur the body
       function toBlur() {
-        if (autoBlur)
+        if (autoBlur) {
           document.body.style.cssText =
             "-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);-o-filter: blur(5px);filter: blur(5px);";
+        }
       }
 
+      // Function to clear the blur
       function toClear() {
         document.body.style.cssText =
           "-webkit-filter: blur(0px);-moz-filter: blur(0px);-ms-filter: blur(0px);-o-filter: blur(0px);filter: blur(0px);";
       }
 
-      document.onclick = function (event) {
+      // Clear blur on click
+      document.onclick = function () {
         toClear();
       };
 
-      document.onmouseleave = function (event) {
+      // Blur when mouse leaves the document
+      document.onmouseleave = function () {
         toBlur();
       };
 
-      document.onblur = function (event) {
+      // Blur when the document loses focus
+      document.onblur = function () {
         toBlur();
       };
 
-      document.addEventListener("keyup", (e) => {
-        if (e.key == "PrintScreen") {
-          if (noScreenshot) {
-            navigator.clipboard.writeText("");
-          }
-        }
-      });
+      // document.addEventListener("keyup", (e) => {
+      //   if (e.key == "PrintScreen") {
+      //     if (noScreenshot) {
+      //       navigator.clipboard.writeText("");
+      //     }
+      //   }
+      // });
 
-      document.addEventListener("keydown", (e) => {
-        if (e.ctrlKey && e.key == "p") {
-          if (noPrint) {
-            e.cancelBubble = true;
-            e.preventDefault();
-            e.stopImmediatePropagation();
-          }
-        }
-      });
+      // document.addEventListener("keydown", (e) => {
+      //   if (e.ctrlKey && e.key == "p") {
+      //     if (noPrint) {
+      //       e.cancelBubble = true;
+      //       e.preventDefault();
+      //       e.stopImmediatePropagation();
+      //     }
+      //   }
+      // });
+
+      // document.addEventListener("keydown", function (e) {
+      //   if (e.key === "PrintScreen") {
+      //     alert("Screenshot is disabled!");
+      //     e.preventDefault();
+      //   }
+      // });
+
+      // document.addEventListener("contextmenu", function (e) {
+      //   e.preventDefault(); // Prevent the context menu from appearing
+      // });
+
+      // document.addEventListener('keyup' , (e)=>{
+      //   navigator.clipboard.writeText('');
+      //   alert('Screenshot Disabled');
+      // });
+
+      
     </script>
   </body>
 </html>
