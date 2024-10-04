@@ -49,6 +49,9 @@
     </title>
   </head>
   <body>
+    <!-- <div id="coverDiv">
+      <h2>Screenshot Blocked</h2>
+    </div> -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -178,10 +181,36 @@
       //   e.preventDefault(); // Prevent the context menu from appearing
       // });
 
-      // document.addEventListener('keyup' , (e)=>{
-      //   navigator.clipboard.writeText('');
-      //   alert('Screenshot Disabled');
-      // });
+      document.addEventListener('keydown' , (e)=>{
+        navigator.clipboard.writeText('');
+        console.log(e);
+          if (e.key === "Meta") {
+          // alert("Screenshot is disabled!");
+          e.preventDefault();
+          // let coverDiv = document.getElementById('coverDiv');
+          // coverDiv.classList.add('show');
+          // alert('Screenshot Disabled');
+          toBlur();
+        }
+      });
+
+      // document.getElementById('coverDiv').addEventListener('click', function() {
+      //       let coverDiv = document.getElementById('coverDiv');
+      //       coverDiv.classList.remove('show');
+      //     });
+
+    //   document.addEventListener('keydown', function(event) {
+    //   if (event.key === 'PrintScreen') {
+    //     // Show the full-screen cover
+        
+
+    //     // Optional: copy a blank image to the clipboard to make Print Screen less effective
+    //     navigator.clipboard.writeText('');
+    //   }
+    // });
+
+    // Optionally, hide the cover after a delay or on another event
+    
 
       
     </script>

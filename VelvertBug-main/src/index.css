@@ -72,3 +72,23 @@ button:focus-visible {
   }
 }
 
+/* #coverDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); 
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#coverDiv.show {
+  display: flex;
+  opacity: 1;
+} */
