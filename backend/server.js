@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js"
 import greetingRouter from "./routes/greetingRoute.js"
 import homeRouter from "./routes/homeRoute.js"
 import 'dotenv/config'
+import paymentRouter from "./routes/paymentRoute.js"
 
 // app config
 const app = express()
@@ -20,6 +21,7 @@ connectDB()
 // api endpoints
 app.use("/api/greeting", greetingRouter)
 app.use("/api/home" , homeRouter)
+app.use("/api/payment", paymentRouter)
 app.use("/images",express.static('uploads'))
 
 app.get("/", (req, res) => {

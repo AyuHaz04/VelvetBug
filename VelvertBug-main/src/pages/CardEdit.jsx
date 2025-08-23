@@ -1,9 +1,11 @@
-import React, { useRef, useState, useContext } from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
 import { Rnd } from "react-rnd";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf"; // Import jsPDF
 import "./CardEdit.css";
 import { StoreContext } from "../assets/Components/Context/StoreContext";
+// import { resolve } from "path";
+import axios from "axios";
 
 const CardEdit = () => {
   const { url, img, img1 } = useContext(StoreContext);
@@ -18,6 +20,78 @@ const CardEdit = () => {
       position: { x: 50, y: 50 },
     },
   ]);
+
+  // const loadScript = (src) => {
+  //   return new Promise((resolve) => {
+  //     const script = document.createElement('script');
+  //     script.src = src;
+  //     script.onload = () => {
+  //       resolve(true);
+  //     }
+  //     script.onerror = () => {
+  //       resolve(false);
+  //     }
+  //     document.body.appendChild(script);
+  //   })
+  // }
+
+  const loadScript = (src) => {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = () => resolve(true);
+      script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+      document.body.appendChild(script);
+    });
+  };
+
+  const onPayment = async () =>{
+    // create order
+    try {
+      const options = {
+        id : 1,
+        amount : 100,
+      }
+
+      const res = await axios.post('http://localhost:4000/api/payment/createOrder', options);
+      const data = res.data;
+
+      console.log(data);
+
+      const paymentObject = new Razorpay({
+        key:"rzp_test_ONTjHForYe4I6Q",
+        orderId: data.id,
+        ...data,
+        handler: function(response){
+          console.log(response);
+          const options2 = {
+            orderId : response.razorpay_order_id,
+            paymentId : response.razorpay_payment_id,
+            signature : response.razorpay_signature,
+          }
+          axios.post('http://localhost:4000/api/payment/verifyPayment' , options2).then((res) => {
+            console.log(res.data);
+            if(res.data.success){
+              alert('Payment Successful');
+            }else{
+              alert('Payment Failed');
+            }
+          }).catch((err) => {
+            console.log(err);
+          })
+        }
+      })
+      
+      paymentObject.open();
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    loadScript('https://checkout.razorpay.com/v1/checkout.js')
+  },[])
   const imageRef = useRef(null);
 
   // Function to prevent right-click download
@@ -244,7 +318,8 @@ const CardEdit = () => {
         </div>
       </div>
       <div className="below-customize">
-        <button onClick={handleDownloadImage}>
+        {/* <button onClick={handleDownloadImage}> */}
+        <button onClick={onPayment}>
           <i className="fa-solid fa-download"></i>Download Image
         </button>
         <button onClick={handleDownloadPDF}>
