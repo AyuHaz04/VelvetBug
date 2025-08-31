@@ -1,82 +1,71 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { StoreContext } from '../assets/Components/Context/StoreContext';
 import "./pagestyles.css";
 import { Link } from "react-router-dom";
-import { FaArrowRight } from 'react-icons/fa';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
     const { home_list, url } = useContext(StoreContext);
-
-    const imgStyle = {
-        width: '80vh',
-        height: '100vh',
-        borderRadius: '10px',
-        margin: '1vh',
-    };
     const imgStyle3 = {
-        width: '80vh',
-        height: 'auto',
+        width: '100%',
+        height: '400px',
         borderRadius: '10px',
-        margin: '1vh',
+        objectFit: 'contain',
+        boxShadow: '0 4px 16px rgba(0,0,0,0.12)'
     };
-
-    const imgStyle2 = {
-        width: '20vh',
-        height: '25vh',
-        borderRadius: '10px',
-        margin: '1vh',
-    };
-
-    const icon1 = {
-        width: '30vh',
-        height: '15vh',
-        borderRadius: '10px',
-        margin: '1vh',
-    };
-
-    const scrollRight = (containerId) => {
-        const container = document.getElementById(containerId);
-        container.scrollBy({ left: 40, behavior: 'smooth' });
-
-        // Loop the scroll
-        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-            container.scrollLeft = 0;
-        }
-    };
-
-    useEffect(() => {
-        const scrollInterval1 = setInterval(() => {
-            scrollRight('img-container-1');
-        }, 10); // Adjust the time in milliseconds for the speed of scrolling
-
-        const scrollInterval2 = setInterval(() => {
-            scrollRight('img-container-2');
-        }, 10); // Adjust the time in milliseconds for the speed of scrolling
-
-        return () => {
-            clearInterval(scrollInterval1);
-            clearInterval(scrollInterval2);
-        };
-    }, []);
-
-     // Function to prevent right-click download
-     const preventDownload = (e) => {
+    const preventDownload = (e) => {
         e.preventDefault();
-      };
+    };
+
+    // Slider settings for react-slick
+    const settingsTop = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        pauseOnHover: true,
+        arrows: true,
+        lazyLoad: 'ondemand',
+        responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+            { breakpoint: 900, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+        ]
+    };
+    const settingsBottom = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        pauseOnHover: true,
+        arrows: true,
+        lazyLoad: 'ondemand',
+        responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+            { breakpoint: 900, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+        ]
+    };
+    // ...existing code...
 
     return (
         <>
             <div className="scroll-container">
-                <div id="img-container-1" className="img-container">
-                    {home_list.map((item) => {
-                        if (item.category === "Top") {
-                            return (
-                                <img src={url + "/images/" + item.image} alt="" style={imgStyle3} key={item.image} onContextMenu={preventDownload} />
-                            );
-                        }
-                    })}
-                </div>
-                <FaArrowRight className="scroll-arrow" onClick={() => scrollRight('img-container-1')} />
+                <Slider {...settingsTop}>
+                    {home_list.filter(item => item.category === "Top").map((item) => (
+                        <div key={item.image}>
+                            <img src={url + "/images/" + item.image} alt="" style={imgStyle3} loading="lazy" />
+                        </div>
+                    ))}
+                </Slider>
             </div>
 
             <div className="para" id="para1">
@@ -84,8 +73,8 @@ export default function Home() {
             </div>
 
             
-            <div class="icon-container">
-                  <img src="./images/imgbelowquote.png" className="quote-img" style={icon1} />
+        <div className="icon-container">
+            <img src="./images/imgbelowquote.png" className="quote-img" style={{ width: '30vh', height: '15vh', borderRadius: '10px', margin: '1vh' }} />
             </div>
 
 
@@ -108,22 +97,19 @@ export default function Home() {
            
             
             <div className="scroll-container">
-                <div id="img-container-2" className="img-container">
-                    {home_list.map((item) => {
-                        if (item.category === "Bottom") {
-                            return (
-                                <img src={url + "/images/" + item.image} alt="" style={imgStyle} key={item.image} onContextMenu={preventDownload} />
-                            );
-                        }
-                    })}
-                </div>
-                <FaArrowRight className="scroll-arrow" onClick={() => scrollRight('img-container-2')} />
+                <Slider {...settingsBottom}>
+                    {home_list.filter(item => item.category === "Bottom").map((item) => (
+                        <div key={item.image}>
+                            <img src={url + "/images/" + item.image} alt="" style={imgStyle3} loading="lazy" />
+                        </div>
+                    ))}
+                </Slider>
             </div>
 
             <div className="midpic">
-                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
+                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={{ width: '20vh', height: '25vh', borderRadius: '10px', margin: '1vh' }} />
                 <h1   className='review'>Reviews</h1>
-                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={imgStyle2} />
+                <img src="./images/design1.png" alt="Left Decorative" className="side-image left-image" style={{ width: '20vh', height: '25vh', borderRadius: '10px', margin: '1vh' }} />
             </div>
            
 

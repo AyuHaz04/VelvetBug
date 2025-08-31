@@ -53,7 +53,7 @@ export default function Dhoti() {
             .map((item) => {
               return (
                 <div key={item.image}>
-                  <div className="image" onContextMenu={preventDownload}>
+                  <div className="image">
                     <Link to="/CardShow">
                       <img
                         onClick={() =>

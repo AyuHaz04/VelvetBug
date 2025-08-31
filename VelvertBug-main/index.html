@@ -66,17 +66,7 @@
       var noScreenshot = true;
       var autoBlur = true;
 
-      // Prevent copying and context menu
-      if (noCopy) {
-        document.body.oncopy = function () {
-          return false;
-        };
-        document.body.oncontextmenu = function () {
-          return false;
-        };
-        document.body.onselectstart = document.body.ondrag = function () {
-          return false;
-        };
+  // Removed global copy and context menu restrictions to allow right-click and selection
 
         document.onkeydown = function (event) {
           // Prevent Ctrl+S
@@ -94,7 +84,7 @@
             alert("Screenshot action detected!"); // Optional alert for debugging
           }
         };
-      }
+      
 
       // Prevent printing
       if (noPrint) {

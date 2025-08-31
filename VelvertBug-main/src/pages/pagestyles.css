@@ -1,3 +1,29 @@
+/* Hide react-slick navigation dots */
+.slick-dots {
+  display: none !important;
+}
+/* Hide horizontal scrollbar for react-slick sliders (all browsers) */
+.slick-slider {
+  overflow-x: hidden !important;
+}
+.slick-track {
+  overflow-x: hidden !important;
+}
+/* Hide scrollbar for react-slick sliders */
+.slick-slider::-webkit-scrollbar,
+.slick-track::-webkit-scrollbar {
+  display: none;
+}
+.slick-slider {
+  scrollbar-width: none; /* Firefox */
+}
+#img-container-2::-webkit-scrollbar {
+  display: none;
+}
+#img-container-2 {
+  scrollbar-width: none; /* Firefox */
+}
+
 #para1{
    margin: auto;
    padding: 20px;
@@ -79,15 +105,12 @@ h2{
  .scroll-container {
   width: 100%;
   position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  min-height: 320px;
+  overflow: visible;
   margin-bottom: 20px;
 }
 
 .scroll-container {
-  display: flex;
-  align-items: center;
   position: relative;
   overflow-x: auto;
   margin-top: 7vh;
@@ -113,6 +136,13 @@ h2{
   overflow-x: auto;
   scroll-behavior: smooth;
   width: 100%;
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* No user-select or pointer-events restrictions */
+}
 }
 
 .scroll-arrow {
@@ -123,10 +153,7 @@ h2{
   color: #000;
   z-index: 1;
 }
-/* 
-.img-container img {
-  flex-shrink: 0;
-} */
+  /* Removed free google widgets text and related comments */
 
 .options {
   list-style-type: none;

@@ -217,7 +217,7 @@ const CardEdit = () => {
       <p className="CustomizeHead">Customize your card</p>
       <div className="container">
         <div className="image-section left-image">
-          <div class="overlayDiv"></div>
+          <div className="overlayDiv"></div>
           <img
             src={url + "/images/" + img}
             alt="Additional"
@@ -227,9 +227,9 @@ const CardEdit = () => {
         <div
           className="image-container"
           ref={imageRef}
-          onContextMenu={preventDownload}
+          
         >
-          <div class="overlayDiv1"></div>
+          <div className="overlayDiv1"></div>
           <img
             src={url + "/images/" + img1}
             alt="Placeholder"

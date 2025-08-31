@@ -57,7 +57,7 @@ export default function BabyName() {
             )
             .map((item) => (
               <div key={item.image}>
-                <div className="image" onContextMenu={preventDownload}>
+                <div className="image">
                   <Link to="/CardShow">
                     <img
                       onClick={() =>

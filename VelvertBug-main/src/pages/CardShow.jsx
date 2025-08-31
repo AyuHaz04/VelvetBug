@@ -20,14 +20,14 @@ export default function CardShow(){
             
             <div className="containerPreview">
                 <div className="img-container-preview">
-                    <div class="overlayDiv"></div>
-                    <img src={url + "/images/" + img} alt="" style={imgStyle3} className='imgplace' onContextMenu="return false;"/>
+                    <div className="overlayDiv"></div>
+                    <img src={url + "/images/" + img} alt="" style={imgStyle3} className='imgplace'/>
                 </div>
                 <div className="details">
                     <div className="details-box">
                         <p>Card Size- 5' x 7'</p>
-                        <p><i class="fa-regular fa-image"></i> Download Image</p>
-                        <p><i class="fa-solid fa-file-pdf"></i> Download Pdf</p>
+                        <p><i className="fa-regular fa-image"></i> Download Image</p>
+                        <p><i className="fa-solid fa-file-pdf"></i> Download Pdf</p>
                     </div>
                     <div className="share-buttons-icons">
                         {/* <p>Share</p> */}
