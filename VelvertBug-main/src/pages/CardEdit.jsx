@@ -166,26 +166,37 @@ const CardEdit = () => {
 
   // Function to download as PDF
   const handleDownloadPDF = async () => {
-    const scale = 300 / 96; // Convert to 300 DPI from 96 DPI
-
+    const scale = 3; // Increase scale for higher resolution
     const canvas = await html2canvas(imageRef.current, {
       useCORS: true,
       scale: scale,
-      width: imageRef.current.offsetWidth * scale,
-      height: imageRef.current.offsetHeight * scale,
     });
 
     const imgData = canvas.toDataURL("image/png", 1.0);
 
-    // Create a new jsPDF document in portrait mode (if the image fits better in landscape, you can change it)
+    // Create a new jsPDF document in A4 portrait size
     const pdf = new jsPDF({
       orientation: "portrait",
-      unit: "px",
-      format: [canvas.width, canvas.height], // Set format to match the canvas dimensions
+      unit: "pt",
+      format: "a4"
     });
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
 
-    pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
-    pdf.save("image-with-text.pdf"); // Save PDF with a name
+    // Calculate aspect ratio
+    const imgAspectRatio = canvas.width / canvas.height;
+    const pageAspectRatio = pageWidth / pageHeight;
+    let renderWidth = pageWidth;
+    let renderHeight = pageHeight;
+    if (imgAspectRatio > pageAspectRatio) {
+      renderHeight = pageWidth / imgAspectRatio;
+    } else {
+      renderWidth = pageHeight * imgAspectRatio;
+    }
+    const x = (pageWidth - renderWidth) / 2;
+    const y = (pageHeight - renderHeight) / 2;
+    pdf.addImage(imgData, "PNG", x, y, renderWidth, renderHeight);
+    pdf.save("image-with-text.pdf");
   };
 
   const [imageLoaded, setImageLoaded] = useState(false);
